@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Void */
+    --void:        #050507;
+    --void-1:      #090910;
+    --void-2:      #0f0f18;
+    --void-3:      #16161f;
+
+    /* Accent — Clean White & Silver system */
+    --accent-primary:   #FFFFFF;   /* pure white */
+    --accent-secondary: #B0B0C8;   /* soft silver-lavender */
+    --accent-hot:       #E0E0FF;   /* icy blue-white */
+    --accent-warm:      #D4D4D4;   /* warm silver */
+
+    /* Typography */
+    --text-primary:     #F0EEF8;   /* off-white with blue tint */
+    --text-secondary:   #8B8BA7;   /* muted lavender-gray */
+    --text-dim:         #3D3D52;   /* very dim, barely visible */
+
+    /* Surfaces */
+    --surface-glass:    rgba(255,255,255,0.03);
+    --surface-card:     rgba(255,255,255,0.05);
+    --border-subtle:    rgba(255,255,255,0.06);
+    --border-glow:      rgba(255, 255, 255, 0.15);
+
+    /* Glow effects — white based */
+    --glow-primary:     0 0 60px rgba(255,255,255,0.15), 0 0 120px rgba(255,255,255,0.05);
+    --glow-secondary:   0 0 60px rgba(176,176,200,0.15), 0 0 120px rgba(176,176,200,0.05);
+    --glow-hot:         0 0 60px rgba(224,224,255,0.15), 0 0 120px rgba(224,224,255,0.05);
+
+    /* Type Scale */
+    --text-xs:    0.75rem;
+    --text-sm:    0.875rem;
+    --text-base:  1rem;
+    --text-lg:    1.125rem;
+    --text-xl:    1.25rem;
+    --text-2xl:   1.5rem;
+    --text-3xl:   1.875rem;
+    --text-4xl:   2.25rem;
+    --text-5xl:   3rem;
+    --text-6xl:   3.75rem;
+    --text-7xl:   4.5rem;
+    --text-8xl:   6rem;
+    --text-9xl:   8rem;
+    --text-display: clamp(4rem, 10vw, 10rem);
+
+    /* Spacing & Layout - 8-point grid exclusively */
+    --space-1:   0.5rem;
+    --space-2:   1rem;
+    --space-3:   1.5rem;
+    --space-4:   2rem;
+    --space-6:   3rem;
+    --space-8:   4rem;
+    --space-12:  6rem;
+    --space-16:  8rem;
+    --space-24: 12rem;
+
+    --section-padding: clamp(4rem, 8vw, 8rem);
+    --container-max: 1400px;
+
+    /* Border radius */
+    --radius-sm:  4px;
+    --radius-md:  8px;
+    --radius-lg:  16px;
+    --radius-xl:  24px;
+    --radius-2xl: 32px;
+    --radius-full: 9999px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--void);
+    color: var(--text-primary);
+    font-family: var(--font-body), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(255,255,255,0.2);
+    color: #ffffff;
+  }
+
+  /* Responsive typography base */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), system-ui, sans-serif;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  p, span, a, li {
+    font-family: var(--font-body), system-ui, sans-serif;
+  }
+
+  code, pre {
+    font-family: var(--font-mono), monospace;
+  }
+
+  /* Smooth scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--void);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.1);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.2);
+  }
+}
+
+@layer utilities {
+  .text-display {
+    font-size: var(--text-display);
+    line-height: 1;
+  }
+
+  /* Responsive container */
+  .container-main {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-main {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  /* Section spacing */
+  .section-padding {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+  }
+}
