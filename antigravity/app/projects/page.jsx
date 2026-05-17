@@ -17,13 +17,13 @@ export default function ProjectsPage() {
     <main className="flex min-h-screen flex-col items-center overflow-hidden">
       {/* Hero — LightPillar */}
       <div className="relative w-full min-h-screen">
-        <LightPillar topColor="#FFFFFF" bottomColor="#AAAACC" intensity={0.5} glowAmount={0.003} pillarWidth={4} quality="medium" />
+        <LightPillar />
         <ProjectsClient />
       </div>
 
       {/* Body sections — Galaxy */}
       <div className="relative w-full">
-        <Galaxy speed={0.4} density={1.0} glowIntensity={0.5} />
+        <Galaxy speed={0.4} density={1.0} glowintensity={0.4} />
         <FeaturedProject />
         <CreativeProcess />
       </div>

@@ -4,33 +4,52 @@
 
 @layer base {
   :root {
-    /* Core Void */
-    --void:        #050507;
-    --void-1:      #090910;
-    --void-2:      #0f0f18;
-    --void-3:      #16161f;
+    /* ─────────────────────────────────────────
+       CANVAS — Pure Light Surfaces
+    ───────────────────────────────────────── */
+    --void:   #FFFFFF;
+    --void-1: #F8F7FF;
+    --void-2: #F0EFF9;
+    --void-3: #E8E6F5;
 
-    /* Accent — Clean White & Silver system */
-    --accent-primary:   #FFFFFF;   /* pure white */
-    --accent-secondary: #B0B0C8;   /* soft silver-lavender */
-    --accent-hot:       #E0E0FF;   /* icy blue-white */
-    --accent-warm:      #D4D4D4;   /* warm silver */
+    /* ─────────────────────────────────────────
+       ACCENT — Darkened for white readability
+    ───────────────────────────────────────── */
+    --accent-primary:   #5046E5;
+    --accent-secondary: #00C4AA;
+    --accent-hot:       #E8007A;
+    --accent-warm:      #E09900;
 
-    /* Typography */
-    --text-primary:     #F0EEF8;   /* off-white with blue tint */
-    --text-secondary:   #8B8BA7;   /* muted lavender-gray */
-    --text-dim:         #3D3D52;   /* very dim, barely visible */
+    /* ─────────────────────────────────────────
+       TYPOGRAPHY - High Contrast, Editorial
+    ───────────────────────────────────────── */
+    --text-primary:   #000000;
+    --text-secondary: #3F3F46;
+    --text-dim:       #71717A;
 
-    /* Surfaces */
-    --surface-glass:    rgba(255,255,255,0.03);
-    --surface-card:     rgba(255,255,255,0.05);
-    --border-subtle:    rgba(255,255,255,0.06);
-    --border-glow:      rgba(255, 255, 255, 0.15);
+    /* ─────────────────────────────────────────
+       SURFACES — White glass morphism
+    ───────────────────────────────────────── */
+    --surface-glass: rgba(255, 255, 255, 0.70);
+    --surface-card:  rgba(255, 255, 255, 0.85);
+    --border-subtle: rgba(10, 9, 20, 0.08);
+    --border-glow:   rgba(80, 70, 229, 0.25);
 
-    /* Glow effects — white based */
-    --glow-primary:     0 0 60px rgba(255,255,255,0.15), 0 0 120px rgba(255,255,255,0.05);
-    --glow-secondary:   0 0 60px rgba(176,176,200,0.15), 0 0 120px rgba(176,176,200,0.05);
-    --glow-hot:         0 0 60px rgba(224,224,255,0.15), 0 0 120px rgba(224,224,255,0.05);
+    /* ─────────────────────────────────────────
+       SHADOWS — Crisp depth (replaces glow)
+    ───────────────────────────────────────── */
+    --shadow-sm:    0 1px 3px rgba(10,9,20,0.08), 0 1px 2px rgba(10,9,20,0.06);
+    --shadow-md:    0 4px 16px rgba(10,9,20,0.10), 0 2px 6px rgba(10,9,20,0.08);
+    --shadow-lg:    0 12px 40px rgba(10,9,20,0.12), 0 4px 12px rgba(10,9,20,0.08);
+    --shadow-xl:    0 24px 80px rgba(10,9,20,0.14), 0 8px 24px rgba(10,9,20,0.10);
+
+    --shadow-accent:    0 8px 30px rgba(80,70,229,0.20), 0 2px 8px rgba(80,70,229,0.12);
+    --shadow-secondary: 0 8px 30px rgba(0,196,170,0.18), 0 2px 8px rgba(0,196,170,0.10);
+    --shadow-hot:       0 8px 30px rgba(232,0,122,0.18), 0 2px 8px rgba(232,0,122,0.10);
+
+    --glow-primary:   var(--shadow-accent);
+    --glow-secondary: var(--shadow-secondary);
+    --glow-hot:       var(--shadow-hot);
 
     /* Type Scale */
     --text-xs:    0.75rem;
@@ -77,6 +96,7 @@
 
   html {
     scroll-behavior: smooth;
+    background-color: var(--void);
   }
 
   body {
@@ -89,15 +109,17 @@
   }
 
   ::selection {
-    background-color: rgba(255,255,255,0.2);
-    color: #ffffff;
+    background: rgba(80, 70, 229, 0.15);
+    color: var(--accent-primary);
   }
 
   /* Responsive typography base */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display), system-ui, sans-serif;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    color: var(--text-primary);
   }
 
   p, span, a, li {
@@ -108,19 +130,20 @@
     font-family: var(--font-mono), monospace;
   }
 
-  /* Smooth scrollbar */
+  /* Smooth scrollbar — light themed */
   ::-webkit-scrollbar {
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--void);
+    background: var(--void-2);
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.1);
-    border-radius: 999px;
+    background: var(--accent-primary);
+    border-radius: 3px;
+    opacity: 0.4;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255,255,255,0.2);
+    opacity: 0.8;
   }
 }
 

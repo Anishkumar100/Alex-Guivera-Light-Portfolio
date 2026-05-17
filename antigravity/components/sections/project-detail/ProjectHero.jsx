@@ -11,7 +11,7 @@ export default function ProjectHero({ project }) {
   const y = useTransform(scrollY, [0, 1000], ['0%', '20%']);
 
   return (
-    <section ref={ref} className="relative flex h-[100vh] min-h-[600px] w-full items-end overflow-hidden bg-void">
+    <section ref={ref} className="relative flex h-[100vh] min-h-[600px] w-full items-end overflow-hidden bg-white">
       
       {/* Parallax Background Image */}
       <motion.div style={{ y }} className="absolute inset-0 z-0 h-[120%] w-full">
@@ -23,7 +23,7 @@ export default function ProjectHero({ project }) {
       </motion.div>
 
       {/* Extreme Gradient Overlay for text legibility */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-[rgba(5,5,7,0.4)] to-void" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-[rgba(5,5,7,0.4)] to-white" />
 
       {/* Spotlighting / Vignette */}
       <div className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(5,5,7,0.5)_100%)]" />
@@ -51,7 +51,7 @@ export default function ProjectHero({ project }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-8 font-display text-[clamp(3.5rem,8vw,8rem)] font-extrabold leading-[1] tracking-tighter text-white drop-shadow-xl"
+            className="mb-8 font-display text-[clamp(3.5rem,8vw,8rem)] font-extrabold leading-[1] tracking-tighter text-[var(--text-primary)] drop-shadow-xl"
           >
             {project.title}
           </motion.h1>
@@ -63,7 +63,7 @@ export default function ProjectHero({ project }) {
             className="flex flex-wrap gap-3"
           >
             {project.tags.map((tag, idx) => (
-              <span key={idx} className="rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.03)] px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-text-secondary backdrop-blur-sm">
+              <span key={idx} className="rounded-full border border-[rgba(10,9,20,0.1)] bg-[rgba(10,9,20,0.03)] px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-text-secondary backdrop-blur-sm">
                 {tag}
               </span>
             ))}

@@ -17,7 +17,7 @@ const AutoResizeTextarea = ({ value, onChange, placeholder, id }) => {
         }}
         placeholder={placeholder}
         rows={1}
-        className="w-full resize-none border-b border-[rgba(255,255,255,0.1)] bg-transparent py-4 font-body text-[1.125rem] text-white transition-colors duration-300 placeholder:text-text-dim focus:border-white focus:outline-none md:text-[1.25rem]"
+        className="w-full resize-none border-b border-[rgba(10,9,20,0.1)] bg-transparent py-4 font-body text-[1.125rem] text-[var(--text-primary)] transition-colors duration-300 placeholder:text-text-dim focus:border-white focus:outline-none md:text-[1.25rem]"
       />
     </div>
   );
@@ -33,7 +33,7 @@ const MinimalInput = ({ id, type = "text", placeholder, value, onChange }) => {
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full border-b border-[rgba(255,255,255,0.1)] bg-transparent py-4 font-body text-[1.125rem] text-white transition-colors duration-300 placeholder:text-text-dim focus:border-white focus:outline-none md:text-[1.25rem]"
+        className="w-full border-b border-[rgba(10,9,20,0.1)] bg-transparent py-4 font-body text-[1.125rem] text-[var(--text-primary)] transition-colors duration-300 placeholder:text-text-dim focus:border-white focus:outline-none md:text-[1.25rem]"
       />
     </div>
   );
@@ -51,8 +51,8 @@ const PillGroup = ({ label, options, selected, onChange }) => {
             type="button"
             onClick={() => onChange(opt)}
             className={`rounded-full border px-4 py-2 font-mono text-[11px] uppercase tracking-widest transition-all duration-300 md:px-6 md:py-2.5 md:text-[12px] ${selected === opt //check this
-              ? 'border-white bg-white/10 text-white'
-              : 'border-[rgba(255,255,255,0.08)] text-text-dim hover:border-[rgba(255,255,255,0.2)] hover:text-white'
+              ? 'border-white bg-[rgba(80,70,229,0.06)] text-[var(--text-primary)]'
+              : 'border-[rgba(10,9,20,0.08)] text-text-dim hover:border-[rgba(10,9,20,0.1)] hover:text-[var(--text-primary)]'
               }`}
           >
             {opt}
@@ -106,7 +106,7 @@ export default function ContactClient() {
     <section className="relative flex min-h-screen w-full items-center justify-center pt-32 pb-20 px-4 sm:px-6 md:px-12">
 
       {/* Minimal Background Grid */}
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_10%,transparent_100%)] opacity-30" />
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(10,9,20,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(10,9,20,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_10%,transparent_100%)] opacity-30" />
 
       <div className="relative z-10 mx-auto grid w-full max-w-[1400px] grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
 
@@ -127,7 +127,7 @@ export default function ContactClient() {
             </span>
           </div>
 
-          <h1 className="mb-8 font-display text-[clamp(2.5rem,6vw,6rem)] font-extrabold leading-[1] tracking-tight text-white">
+          <h1 className="mb-8 font-display text-[clamp(2.5rem,6vw,6rem)] font-extrabold leading-[1] tracking-tight text-[var(--text-primary)]">
             Let's build <br />
             <span className="text-text-secondary">something.</span>
           </h1>
@@ -141,7 +141,7 @@ export default function ContactClient() {
               <span className="mb-3 block font-mono text-[11px] uppercase tracking-[0.2em] text-text-dim">Direct Email</span>
               <button
                 onClick={handleCopyEmail}
-                className="group flex items-center gap-4 text-left font-display text-[1.25rem] font-medium text-white transition-colors hover:text-white/60 md:text-[1.5rem]"
+                className="group flex items-center gap-4 text-left font-display text-[1.25rem] font-medium text-[var(--text-primary)] transition-colors hover:text-[var(--text-primary)]/60 md:text-[1.5rem]"
               >
                 akcoder1102004@gmail.com
                 <span className="font-mono text-[10px] uppercase tracking-widest text-text-dim opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -154,14 +154,14 @@ export default function ContactClient() {
               <span className="mb-4 block font-mono text-[11px] uppercase tracking-[0.2em] text-text-dim">Socials</span>
               <div className="flex gap-6">
                 {['X / Twitter', 'LinkedIn', 'Dribbble'].map((social) => (
-                  <a key={social} href="#" className="font-body text-[1rem] text-white transition-colors hover:text-accent-primary">
+                  <a key={social} href="#" className="font-body text-[1rem] text-[var(--text-primary)] transition-colors hover:text-accent-primary">
                     {social}
                   </a>
                 ))}
               </div>
             </div>
 
-            <div className="pt-8 border-t border-[rgba(255,255,255,0.05)]">
+            <div className="pt-8 border-t border-[rgba(10,9,20,0.05)]">
               <span className="font-mono text-[11px] text-text-dim uppercase tracking-[0.1em]">
                 Based in New York // EST (GMT-5)
               </span>
@@ -176,7 +176,7 @@ export default function ContactClient() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="flex w-full flex-col justify-center"
         >
-          <form onSubmit={handleSubmit} className="flex flex-col gap-8 rounded-[var(--radius-xl)] bg-void-1 p-6 shadow-2xl border border-[rgba(255,255,255,0.03)] md:gap-10 md:p-12">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-8 rounded-[var(--radius-xl)] bg-void-1 p-6 shadow-2xl border border-[rgba(10,9,20,0.03)] md:gap-10 md:p-12">
 
             <div className="flex flex-col gap-8 md:flex-row md:gap-6">
               <MinimalInput
@@ -221,7 +221,7 @@ export default function ContactClient() {
               <button
                 type="submit"
                 disabled={formState !== 'idle' || !formData.name || !formData.email}
-                className="group relative flex w-full items-center justify-center overflow-hidden rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.03)] py-5 font-mono text-[12px] uppercase tracking-widest text-white transition-all duration-300 hover:border-white hover:bg-white hover:text-void disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-[rgba(255,255,255,0.1)] disabled:hover:bg-[rgba(255,255,255,0.03)] disabled:hover:text-white"
+                className="group relative flex w-full items-center justify-center overflow-hidden rounded-full border border-[rgba(10,9,20,0.1)] bg-[rgba(10,9,20,0.03)] py-5 font-mono text-[12px] uppercase tracking-widest text-[var(--text-primary)] transition-all duration-300 hover:border-[var(--accent-primary)] hover:bg-[var(--accent-primary)] hover:text-white disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-[rgba(10,9,20,0.1)] disabled:hover:bg-[rgba(10,9,20,0.03)] disabled:hover:text-[var(--text-primary)]"
               >
                 <AnimatePresence mode="wait">
                   {formState === 'idle' && (

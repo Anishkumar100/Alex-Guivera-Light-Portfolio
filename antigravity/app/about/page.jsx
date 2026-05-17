@@ -18,7 +18,7 @@ export default function AboutPage() {
     <main className="flex min-h-screen flex-col items-center overflow-hidden">
       {/* Hero — LightPillar with explicit min-height */}
       <div className="relative w-full min-h-screen">
-        <LightPillar topColor="#FFFFFF" bottomColor="#AAAACC" intensity={0.5} glowAmount={0.003} pillarWidth={4} quality="medium" />
+        <LightPillar />
         <Hero />
       </div>
 
@@ -26,7 +26,7 @@ export default function AboutPage() {
 
       {/* Body sections — Galaxy */}
       <div className="relative w-full">
-        <Galaxy speed={0.4} density={1.0} glowIntensity={0.5} />
+        <Galaxy speed={0.4} density={1.0} glowintensity={0.4} />
         <SkillsMatrix />
         <PhilosophyDeepDive />
       </div>

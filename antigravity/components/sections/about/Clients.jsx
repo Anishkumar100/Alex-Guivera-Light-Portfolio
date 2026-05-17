@@ -11,8 +11,8 @@ const LOGOS = [
 ];
 
 const LogoCard = ({ name }) => (
-  <div className="group flex h-[140px] w-[260px] shrink-0 items-center justify-center rounded-[var(--radius-lg)] border border-[rgba(255,255,255,0.03)] bg-[rgba(255,255,255,0.01)] transition-all duration-500 hover:border-accent-primary/30 hover:bg-[rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(108,99,255,0.15)]">
-    <span className="font-display text-[1.25rem] font-bold tracking-widest text-white opacity-20 transition-opacity duration-500 group-hover:opacity-100">
+  <div className="group flex h-[140px] w-[260px] shrink-0 items-center justify-center rounded-[var(--radius-lg)] border border-[rgba(10,9,20,0.03)] bg-[rgba(10,9,20,0.01)] transition-all duration-500 hover:border-accent-primary/30 hover:bg-[rgba(10,9,20,0.05)] hover:shadow-[0_0_20px_rgba(108,99,255,0.15)]">
+    <span className="font-display text-[1.25rem] font-bold tracking-widest text-[var(--text-primary)] opacity-20 transition-opacity duration-500 group-hover:opacity-100">
       {name}
     </span>
   </div>

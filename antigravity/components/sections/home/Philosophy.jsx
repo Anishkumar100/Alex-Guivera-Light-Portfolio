@@ -31,7 +31,7 @@ const PANELS = [
 
 export default function Philosophy() {
   return (
-    <section className="relative w-full overflow-hidden bg-void py-32 md:py-48">
+    <section className="relative w-full overflow-hidden bg-white py-32 md:py-48">
       <div className="mx-auto flex w-full max-w-[1400px] flex-col gap-32 px-6 md:gap-48 md:px-12">
         {PANELS.map((panel, idx) => (
           <motion.div 

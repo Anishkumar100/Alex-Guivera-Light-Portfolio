@@ -18,7 +18,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center overflow-hidden">
       {/* Hero — LightPillar background */}
       <div className="relative w-full min-h-screen">
-        <LightPillar topColor="#FFFFFF" bottomColor="#AAAACC" intensity={0.5} glowAmount={0.003} pillarWidth={4} quality="medium" />
+        <LightPillar />
         <Hero />
       </div>
 
@@ -26,7 +26,7 @@ export default function Home() {
 
       {/* Body sections — Galaxy background */}
       <div className="relative w-full">
-        <Galaxy speed={0.4} density={1.0} glowIntensity={0.5} />
+        <Galaxy speed={0.4} density={1.0} glowintensity={0.4} />
         <SelectedWork />
       </div>
 
@@ -39,7 +39,7 @@ export default function Home() {
       </div>
 
       <div className="relative w-full">
-        <Galaxy speed={0.5} density={0.9} glowIntensity={0.5} />
+        <Galaxy speed={0.5} density={0.9} glowintensity={0.4} />
         <Testimonials />
       </div>
 

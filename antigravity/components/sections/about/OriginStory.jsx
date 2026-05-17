@@ -42,18 +42,18 @@ const MILESTONES = [
 
 export default function OriginStory() {
   return (
-    <section className="relative w-full overflow-hidden bg-void py-32 md:py-48">
+    <section className="relative w-full overflow-hidden bg-white py-32 md:py-48">
       {/* Subtle aurora glow */}
-      <div className="pointer-events-none absolute inset-0 z-0 opacity-50 mix-blend-screen">
-        <div className="absolute -top-[20%] left-[10%] h-[80%] w-[60%] rounded-[100%] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.08)_0%,transparent_60%)] blur-[100px]" />
-        <div className="absolute bottom-[0%] right-[10%] h-[70%] w-[60%] rounded-[100%] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.05)_0%,transparent_60%)] blur-[100px]" />
+      <div className="pointer-events-none absolute inset-0 z-0 opacity-50 mix-blend-multiply">
+        <div className="absolute -top-[20%] left-[10%] h-[80%] w-[60%] rounded-[100%] bg-[radial-gradient(ellipse_at_center,rgba(10,9,20,0.08)_0%,transparent_60%)] blur-[100px]" />
+        <div className="absolute bottom-[0%] right-[10%] h-[70%] w-[60%] rounded-[100%] bg-[radial-gradient(ellipse_at_center,rgba(10,9,20,0.05)_0%,transparent_60%)] blur-[100px]" />
       </div>
 
       {/* Grid overlay */}
-      <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_60%,transparent_100%)]" />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(rgba(10,9,20,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(10,9,20,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_60%,transparent_100%)]" />
 
       {/* Vertical centerline for timeline effect */}
-      <div className="absolute left-6 top-0 z-0 h-full w-[1px] bg-gradient-to-b from-transparent via-[rgba(255,255,255,0.1)] to-transparent opacity-50 md:left-1/2 md:-translate-x-1/2" />
+      <div className="absolute left-6 top-0 z-0 h-full w-[1px] bg-gradient-to-b from-transparent via-[rgba(10,9,20,0.1)] to-transparent opacity-50 md:left-1/2 md:-translate-x-1/2" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-[1200px] flex-col gap-24 px-6 md:gap-40 md:px-12">
         {MILESTONES.map((milestone, idx) => (
@@ -76,16 +76,16 @@ export default function OriginStory() {
             </div>
 
             {/* Timeline dot */}
-            <div className="absolute left-0 top-12 h-[12px] w-[12px] -translate-x-1/2 rounded-full bg-white shadow-[0_0_15px_rgba(255,255,255,0.3)] md:left-1/2 md:top-1/2 md:-translate-y-1/2" />
+            <div className="absolute left-0 top-12 h-[12px] w-[12px] -translate-x-1/2 rounded-full bg-white shadow-[0_0_15px_rgba(10,9,20,0.2)] md:left-1/2 md:top-1/2 md:-translate-y-1/2" />
 
             {/* Card Section */}
             <div className={`flex w-full justify-center md:w-1/2 ${idx % 2 === 1 ? 'md:justify-end' : 'md:justify-start'}`}>
-              <div className="w-full max-w-[500px] rounded-[var(--radius-xl)] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] p-6 shadow-2xl backdrop-blur-xl transition-transform duration-500 hover:scale-[1.02] hover:border-[rgba(255,255,255,0.15)] sm:p-8 md:p-10">
-                <div className="mb-6 flex items-center justify-between border-b border-[rgba(255,255,255,0.05)] pb-6">
-                  <h3 className="font-display text-[1.75rem] font-bold text-white">
+              <div className="w-full max-w-[500px] rounded-[var(--radius-xl)] border border-[rgba(10,9,20,0.08)] bg-[rgba(10,9,20,0.02)] p-6 shadow-2xl backdrop-blur-xl transition-transform duration-500 hover:scale-[1.02] hover:border-[rgba(10,9,20,0.15)] sm:p-8 md:p-10">
+                <div className="mb-6 flex items-center justify-between border-b border-[rgba(10,9,20,0.05)] pb-6">
+                  <h3 className="font-display text-[1.75rem] font-bold text-[var(--text-primary)]">
                     {milestone.title}
                   </h3>
-                  <span className="rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-text-dim">
+                  <span className="rounded-full border border-[rgba(10,9,20,0.1)] bg-[rgba(10,9,20,0.05)] px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-text-dim">
                     {milestone.location}
                   </span>
                 </div>
@@ -100,7 +100,7 @@ export default function OriginStory() {
                   </span>
                   <div className="flex flex-wrap gap-2">
                     {milestone.clients.map((client, cIdx) => (
-                      <span key={cIdx} className="rounded-md border border-[rgba(255,255,255,0.05)] bg-void-2 px-3 py-1.5 font-mono text-[11px] text-accent-secondary">
+                      <span key={cIdx} className="rounded-md border border-[rgba(10,9,20,0.05)] bg-void-2 px-3 py-1.5 font-mono text-[11px] text-accent-secondary">
                         {client}
                       </span>
                     ))}

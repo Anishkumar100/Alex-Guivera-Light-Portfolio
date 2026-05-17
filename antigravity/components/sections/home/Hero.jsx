@@ -37,13 +37,13 @@ export default function Hero() {
         transition={{ delay: 1.2, duration: 0.1 }}
       >
         <motion.div 
-          className="h-full w-1/2 bg-black"
+          className="h-full w-1/2 bg-white"
           initial={{ x: 0 }}
           animate={{ x: '-100%' }}
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.4 }}
         />
         <motion.div 
-          className="h-full w-1/2 bg-black"
+          className="h-full w-1/2 bg-white"
           initial={{ x: 0 }}
           animate={{ x: '100%' }}
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.4 }}
@@ -51,7 +51,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Spotlight glow */}
-      <div className="absolute -top-40 -left-40 z-0 h-[400px] w-[400px] sm:h-[600px] sm:w-[600px] rounded-full bg-white/10 blur-[120px]" />
+      <div className="absolute -top-40 -left-40 z-0 h-[400px] w-[400px] sm:h-[600px] sm:w-[600px] rounded-full bg-[rgba(80,70,229,0.06)] blur-[120px]" />
 
       <div className="z-10 flex flex-col items-center px-4 sm:px-6 text-center">
         <motion.div style={{ y: yParallax }} className="flex flex-col items-center">
@@ -71,12 +71,12 @@ export default function Hero() {
             animate="visible"
             className="flex flex-wrap justify-center gap-x-1 sm:gap-x-2 md:gap-x-4 font-display text-[clamp(2.5rem,8vw,9rem)] font-extrabold leading-[0.9] tracking-tight"
           >
-            <span className="flex text-white mr-2 sm:mr-4 md:mr-6">
+            <span className="flex text-[var(--accent-primary)] mr-2 sm:mr-4 md:mr-6">
               {"DEFIES".split('').map((char, i) => (
                 <motion.span key={`defies-${i}`} variants={charVariant} className="inline-block">{char}</motion.span>
               ))}
             </span>
-            <span className="flex text-white/60">
+            <span className="flex text-[var(--text-secondary)]">
               {"GRAVITY".split('').map((char, i) => (
                 <motion.span key={`gravity-${i}`} variants={charVariant} className="inline-block">{char}</motion.span>
               ))}
@@ -137,7 +137,7 @@ export default function Hero() {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-12 right-6 md:right-12 hidden md:flex items-center gap-3 rounded-full border border-[rgba(255,255,255,0.06)] bg-void-1/50 px-4 py-2 backdrop-blur-md"
+        className="absolute bottom-12 right-6 md:right-12 hidden md:flex items-center gap-3 rounded-full border border-[rgba(10,9,20,0.06)] bg-white/80 px-4 py-2 backdrop-blur-md shadow-[var(--shadow-sm)]"
       >
         <span className="relative flex h-2 w-2">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>

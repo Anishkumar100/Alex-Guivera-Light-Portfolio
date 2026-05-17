@@ -54,11 +54,11 @@ export default function Awards() {
         </div>
 
         {/* Awards List */}
-        <div className="flex flex-col border-t border-[rgba(255,255,255,0.05)]">
+        <div className="flex flex-col border-t border-[rgba(10,9,20,0.05)]">
           {AWARDS.map((award, idx) => (
             <div 
               key={idx}
-              className="award-row group relative flex cursor-default flex-col items-start justify-between border-b border-[rgba(255,255,255,0.05)] px-6 py-8 transition-colors duration-500 hover:bg-[rgba(255,255,255,0.02)] md:flex-row md:items-center md:px-10 md:py-12"
+              className="award-row group relative flex cursor-default flex-col items-start justify-between border-b border-[rgba(10,9,20,0.05)] px-6 py-8 transition-colors duration-500 hover:bg-[rgba(10,9,20,0.02)] md:flex-row md:items-center md:px-10 md:py-12"
             >
               {/* Left Border appear on hover */}
               <div className="absolute left-0 top-0 h-full w-[4px] scale-y-0 bg-accent-primary origin-center transition-transform duration-300 group-hover:scale-y-100 shadow-[0_0_15px_var(--accent-primary)]" />
@@ -71,7 +71,7 @@ export default function Awards() {
               </div>
 
               {/* Center: Thin Separator Line */}
-              <div className="mx-8 hidden h-[1px] w-full flex-grow bg-[rgba(255,255,255,0.05)] transition-colors duration-500 group-hover:bg-[rgba(255,255,255,0.15)] md:block" />
+              <div className="mx-8 hidden h-[1px] w-full flex-grow bg-[rgba(10,9,20,0.05)] transition-colors duration-500 group-hover:bg-[rgba(10,9,20,0.15)] md:block" />
 
               {/* Right: Year + Organization */}
               <div className="mt-6 flex w-full justify-between md:mt-0 md:w-auto md:justify-end md:gap-12">

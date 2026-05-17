@@ -67,7 +67,7 @@ const GlareCard = ({ children, className = "" }) => {
           }}
         />
         {/* Soft edge border glow */}
-        <div className="pointer-events-none absolute inset-0 z-40 rounded-[var(--radius-2xl)] border border-[rgba(255,255,255,0.05)] transition-colors duration-500 hover:border-accent-primary/30" />
+        <div className="pointer-events-none absolute inset-0 z-40 rounded-[var(--radius-2xl)] border border-[rgba(10,9,20,0.05)] transition-colors duration-500 hover:border-accent-primary/30" />
       </motion.div>
     </div>
   );
@@ -75,11 +75,11 @@ const GlareCard = ({ children, className = "" }) => {
 
 export default function FeaturedProject() {
   return (
-    <section className="relative flex w-full flex-col items-center justify-center overflow-hidden border-y border-[rgba(255,255,255,0.05)] py-32 md:py-40">
+    <section className="relative flex w-full flex-col items-center justify-center overflow-hidden border-y border-[rgba(10,9,20,0.05)] py-32 md:py-40">
       
       {/* Background Spotlight */}
       <div className="absolute inset-0 z-0 flex items-center justify-center opacity-30">
-        <div className="absolute h-[600px] w-[600px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.08)_0%,transparent_60%)] blur-[100px]" />
+        <div className="absolute h-[600px] w-[600px] rounded-full bg-[radial-gradient(circle,rgba(10,9,20,0.08)_0%,transparent_60%)] blur-[100px]" />
       </div>
 
       <div className="relative z-10 mx-auto flex w-full max-w-[1400px] flex-col-reverse items-center gap-16 px-6 md:px-12 lg:flex-row lg:gap-24">
@@ -94,26 +94,26 @@ export default function FeaturedProject() {
             <span className="font-mono text-[11px] tracking-widest text-text-dim">2026</span>
           </div>
 
-          <h2 className="mb-8 font-display text-[clamp(2.5rem,5vw,4rem)] font-extrabold leading-[1.05] tracking-tight text-white">
+          <h2 className="mb-8 font-display text-[clamp(2.5rem,5vw,4rem)] font-extrabold leading-[1.05] tracking-tight text-[var(--text-primary)]">
             Quantum <br />
-            <span className="text-white/60">Engine OS</span>
+            <span className="text-[var(--text-primary)]/60">Engine OS</span>
           </h2>
 
           <p className="mb-12 font-body text-[1.125rem] font-light leading-relaxed text-text-secondary">
             A complete architectural reimagining of the Quantum OS dashboard. We stripped away 60% of the visual noise, introduced a physics-based motion system, and rebuilt the entire design language from zero to create an interface that feels less like software and more like a high-performance vehicle.
           </p>
 
-          <div className="mb-12 flex flex-wrap gap-8 border-l-2 border-[rgba(255,255,255,0.1)] pl-6">
+          <div className="mb-12 flex flex-wrap gap-8 border-l-2 border-[rgba(10,9,20,0.1)] pl-6">
             <div className="flex flex-col">
-              <span className="font-display text-[1.5rem] font-bold text-white">+42%</span>
+              <span className="font-display text-[1.5rem] font-bold text-[var(--text-primary)]">+42%</span>
               <span className="mt-1 font-mono text-[10px] uppercase tracking-widest text-text-dim">User Retention</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-[1.5rem] font-bold text-white">12ms</span>
+              <span className="font-display text-[1.5rem] font-bold text-[var(--text-primary)]">12ms</span>
               <span className="mt-1 font-mono text-[10px] uppercase tracking-widest text-text-dim">Interaction Latency</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-[1.5rem] font-bold text-white">Webby</span>
+              <span className="font-display text-[1.5rem] font-bold text-[var(--text-primary)]">Webby</span>
               <span className="mt-1 font-mono text-[10px] uppercase tracking-widest text-text-dim">Nominee '26</span>
             </div>
           </div>
@@ -121,7 +121,7 @@ export default function FeaturedProject() {
           <div className="flex">
             <Link href="/projects/quantum-engine">
               <MagneticButton 
-                className="!px-8 !py-4 font-display text-[1rem] font-medium uppercase tracking-widest text-white border border-[rgba(255,255,255,0.2)] bg-[rgba(255,255,255,0.03)] hover:bg-white hover:text-void transition-colors duration-300"
+                className="!px-8 !py-4 font-display text-[1rem] font-medium uppercase tracking-widest text-[var(--text-primary)] border border-[rgba(10,9,20,0.1)] bg-[rgba(10,9,20,0.03)] hover:bg-[var(--accent-primary)] hover:text-white transition-colors duration-300"
               >
                 Deep Dive →
               </MagneticButton>
@@ -138,9 +138,9 @@ export default function FeaturedProject() {
               className="absolute inset-0 h-full w-full object-cover"
             />
             {/* Color Burn Overlay */}
-            <div className="absolute inset-0 mix-blend-color-burn bg-white/10" />
+            <div className="absolute inset-0 mix-blend-color-burn bg-[rgba(80,70,229,0.06)]" />
             {/* Edge Shadow */}
-            <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(5,5,7,0.8)]" />
+            <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(255,255,255,0.5)]" />
           </GlareCard>
         </div>
 

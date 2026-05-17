@@ -37,7 +37,7 @@ export default function ProjectPage({ params }) {
   const project = getProjectData(params.slug);
 
   return (
-    <main className="flex min-h-screen flex-col items-center overflow-hidden bg-void">
+    <main className="flex min-h-screen flex-col items-center overflow-hidden bg-white">
       <ProjectDetailClient project={project} />
     </main>
   );

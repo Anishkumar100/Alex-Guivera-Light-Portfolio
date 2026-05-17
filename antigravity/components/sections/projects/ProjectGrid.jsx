@@ -114,7 +114,7 @@ const ProjectCard = ({ project }) => {
       ref={ref}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`group relative w-full overflow-hidden rounded-[var(--radius-lg)] border border-[rgba(255,255,255,0.05)] bg-void-1 transition-colors duration-500 hover:border-white/20 ${project.heightClass}`}
+      className={`group relative w-full overflow-hidden rounded-[var(--radius-lg)] border border-[rgba(10,9,20,0.05)] bg-void-1 transition-colors duration-500 hover:border-[rgba(10,9,20,0.12)] ${project.heightClass}`}
     >
       {/* Base Image */}
       <motion.img
@@ -126,7 +126,7 @@ const ProjectCard = ({ project }) => {
       />
 
       {/* Default Bottom Gradient (always visible for legibility) */}
-      <div className="absolute inset-0 bg-gradient-to-t from-void via-[rgba(5,5,7,0.4)] to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-40" />
+      <div className="absolute inset-0 bg-gradient-to-t from-white via-[rgba(5,5,7,0.4)] to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-40" />
 
       {/* Direction-Aware Hover Overlay */}
       <AnimatePresence>
@@ -136,16 +136,16 @@ const ProjectCard = ({ project }) => {
             animate="center"
             exit={slideVariants[direction]}
             transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-            className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-[rgba(255,255,255,0.08)] backdrop-blur-md"
+            className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-[rgba(10,9,20,0.08)] backdrop-blur-md"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-2 backdrop-blur-md"
+              className="flex items-center gap-2 rounded-full border border-[rgba(10,9,20,0.12)] bg-[rgba(80,70,229,0.06)] px-6 py-2 backdrop-blur-md"
             >
-              <span className="font-mono text-[13px] uppercase tracking-widest text-white">View Project</span>
-              <span className="text-white">→</span>
+              <span className="font-mono text-[13px] uppercase tracking-widest text-[var(--text-primary)]">View Project</span>
+              <span className="text-[var(--text-primary)]">→</span>
             </motion.div>
           </motion.div>
         )}
@@ -156,7 +156,7 @@ const ProjectCard = ({ project }) => {
         <span className="mb-2 block font-mono text-[11px] uppercase tracking-[0.2em] text-accent-secondary">
           {project.category}
         </span>
-        <h3 className="font-display text-[1.75rem] font-bold tracking-tight text-white">
+        <h3 className="font-display text-[1.75rem] font-bold tracking-tight text-[var(--text-primary)]">
           {project.title}
         </h3>
       </div>
@@ -185,12 +185,12 @@ export default function ProjectGrid({ activeFilter, setActiveFilter }) {
       <div className="mx-auto w-full max-w-[1400px]">
         
         {/* Filter Section */}
-        <div className="mb-12 flex flex-col items-center justify-between gap-6 border-b border-[rgba(255,255,255,0.05)] pb-8 md:flex-row">
+        <div className="mb-12 flex flex-col items-center justify-between gap-6 border-b border-[rgba(10,9,20,0.05)] pb-8 md:flex-row">
           <div className="flex items-center gap-2">
             <span className="font-mono text-[12px] uppercase tracking-widest text-text-dim">
               Showing
             </span>
-            <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 font-mono text-[11px] text-white">
+            <span className="rounded-full bg-[rgba(10,9,20,0.05)] px-3 py-1 font-mono text-[11px] text-[var(--text-primary)]">
               <AnimatedCounter value={COUNTS[activeFilter]} /> Works
             </span>
           </div>
@@ -207,17 +207,17 @@ export default function ProjectGrid({ activeFilter, setActiveFilter }) {
                 <button
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
-                  className={`relative px-5 py-2 font-mono text-[11px] uppercase tracking-widest transition-colors duration-300 md:text-[12px] ${isActive ? 'text-void' : 'text-text-secondary hover:text-white'}`}
+                  className={`relative px-5 py-2 font-mono text-[11px] uppercase tracking-widest transition-colors duration-300 md:text-[12px] ${isActive ? 'text-white' : 'text-text-secondary hover:text-[var(--text-primary)]'}`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="gridFilterBg"
-                      className="absolute inset-0 z-[-1] rounded-full bg-white shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+                      className="absolute inset-0 z-[-1] rounded-full bg-[var(--accent-primary)] shadow-[var(--shadow-accent)]"
                       transition={{ type: "spring", stiffness: 300, damping: 25 }}
                     />
                   )}
                   {!isActive && (
-                    <div className="absolute inset-0 z-[-1] rounded-full border border-[rgba(255,255,255,0.08)] transition-colors hover:border-[rgba(255,255,255,0.2)]" />
+                    <div className="absolute inset-0 z-[-1] rounded-full border border-[rgba(10,9,20,0.08)] transition-colors hover:border-[rgba(10,9,20,0.1)]" />
                   )}
                   {filter}
                 </button>
@@ -244,12 +244,12 @@ export default function ProjectGrid({ activeFilter, setActiveFilter }) {
           <div className="mt-20 flex w-full justify-center">
             <button
               onClick={handleLoadMore}
-              className="group relative flex items-center gap-3 overflow-hidden rounded-full border border-[rgba(255,255,255,0.1)] bg-transparent px-8 py-4 transition-colors hover:border-white hover:bg-white"
+              className="group relative flex items-center gap-3 overflow-hidden rounded-full border border-[rgba(10,9,20,0.1)] bg-transparent px-8 py-4 transition-colors hover:border-[var(--accent-primary)] hover:bg-[var(--accent-primary)]"
             >
-              <span className="font-mono text-[13px] uppercase tracking-widest text-white transition-colors group-hover:text-void">
+              <span className="font-mono text-[13px] uppercase tracking-widest text-[var(--text-primary)] transition-colors group-hover:text-white">
                 Load More
               </span>
-              <span className="text-text-dim transition-colors group-hover:text-void">
+              <span className="text-text-dim transition-colors group-hover:text-white">
                 ↓
               </span>
             </button>

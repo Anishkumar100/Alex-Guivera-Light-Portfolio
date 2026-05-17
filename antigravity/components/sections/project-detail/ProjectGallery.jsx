@@ -46,14 +46,14 @@ const GlareImage = ({ src, alt, caption, className = "" }) => {
             rotateY,
             transformStyle: "preserve-3d",
           }}
-          className="relative h-full w-full overflow-hidden rounded-[var(--radius-xl)] bg-void shadow-2xl"
+          className="relative h-full w-full overflow-hidden rounded-[var(--radius-xl)] bg-white shadow-2xl"
         >
           <img src={src} alt={alt} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]" />
           
           <motion.div 
             className="pointer-events-none absolute inset-0 z-50 mix-blend-overlay"
             style={{
-              background: "radial-gradient(circle at center, rgba(255,255,255,0.6) 0%, transparent 40%)",
+              background: "radial-gradient(circle at center, rgba(10,9,20,0.4) 0%, transparent 40%)",
               left: useTransform(glareX, v => `calc(${v} - 50%)`),
               top: useTransform(glareY, v => `calc(${v} - 50%)`),
               width: "200%",
@@ -61,7 +61,7 @@ const GlareImage = ({ src, alt, caption, className = "" }) => {
               opacity: glareOpacity
             }}
           />
-          <div className="pointer-events-none absolute inset-0 z-40 border border-[rgba(255,255,255,0.05)] transition-colors duration-500 hover:border-accent-primary/30" />
+          <div className="pointer-events-none absolute inset-0 z-40 border border-[rgba(10,9,20,0.05)] transition-colors duration-500 hover:border-accent-primary/30" />
         </motion.div>
       </div>
       {caption && (

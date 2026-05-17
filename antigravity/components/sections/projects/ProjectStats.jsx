@@ -23,7 +23,7 @@ function StatCounter({ value, prefix = "", suffix = "" }) {
   }, [value, isInView]);
 
   return (
-    <span ref={ref} className="font-display text-[clamp(4rem,10vw,7rem)] font-extrabold leading-none tracking-tighter text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+    <span ref={ref} className="font-display text-[clamp(4rem,10vw,7rem)] font-extrabold leading-none tracking-tighter text-[var(--text-primary)] drop-shadow-[0_0_30px_rgba(10,9,20,0.1)]">
       {prefix}{displayValue}{suffix}
     </span>
   );
@@ -31,7 +31,7 @@ function StatCounter({ value, prefix = "", suffix = "" }) {
 
 export default function ProjectStats() {
   return (
-    <section className="relative w-full border-t border-[rgba(255,255,255,0.05)] py-32 md:py-40">
+    <section className="relative w-full border-t border-[rgba(10,9,20,0.05)] py-32 md:py-40">
       
       {/* Background Gradient */}
       <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-20">
@@ -62,7 +62,7 @@ export default function ProjectStats() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative flex flex-col items-center justify-center text-center md:before:absolute md:before:left-0 md:before:h-32 md:before:w-[1px] md:before:bg-[rgba(255,255,255,0.1)] md:after:absolute md:after:right-0 md:after:h-32 md:after:w-[1px] md:after:bg-[rgba(255,255,255,0.1)]"
+            className="relative flex flex-col items-center justify-center text-center md:before:absolute md:before:left-0 md:before:h-32 md:before:w-[1px] md:before:bg-[rgba(10,9,20,0.1)] md:after:absolute md:after:right-0 md:after:h-32 md:after:w-[1px] md:after:bg-[rgba(10,9,20,0.1)]"
           >
             <StatCounter value={14} />
             <span className="mt-6 font-mono text-[12px] uppercase tracking-[0.25em] text-accent-primary">

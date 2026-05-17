@@ -16,7 +16,7 @@ const generatePlaceholderSVG = (name) => {
         dominantBaseline="middle" 
         textAnchor="middle" 
         fill="currentColor" 
-        className="font-display text-[28px] font-extrabold tracking-[0.2em] text-white"
+        className="font-display text-[28px] font-extrabold tracking-[0.2em] text-[var(--text-primary)]"
       >
         {name.toUpperCase()}
       </text>
@@ -34,13 +34,13 @@ export default function Collaborations() {
           <span className="mb-4 font-mono text-[11px] uppercase tracking-[0.25em] text-accent-secondary">
             Network & Press
           </span>
-          <h2 className="font-display text-[clamp(2.5rem,4vw,3.5rem)] font-extrabold tracking-tight text-white">
+          <h2 className="font-display text-[clamp(2.5rem,4vw,3.5rem)] font-extrabold tracking-tight text-[var(--text-primary)]">
             Trusted By Industry Leaders
           </h2>
         </div>
 
         {/* Editorial Grid */}
-        <div className="grid grid-cols-2 border-l border-t border-[rgba(255,255,255,0.05)] md:grid-cols-4">
+        <div className="grid grid-cols-2 border-l border-t border-[rgba(10,9,20,0.05)] md:grid-cols-4">
           {LOGOS.map((logo, idx) => (
             <motion.div
               key={idx}
@@ -48,7 +48,7 @@ export default function Collaborations() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="group flex aspect-[3/2] items-center justify-center border-b border-r border-[rgba(255,255,255,0.05)] p-6 transition-colors duration-500 hover:bg-[rgba(255,255,255,0.02)]"
+              className="group flex aspect-[3/2] items-center justify-center border-b border-r border-[rgba(10,9,20,0.05)] p-6 transition-colors duration-500 hover:bg-[rgba(10,9,20,0.02)]"
             >
               {generatePlaceholderSVG(logo)}
             </motion.div>

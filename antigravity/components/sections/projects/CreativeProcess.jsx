@@ -26,7 +26,7 @@ const PROCESS_TYPES = [
 
 const ProcessAccordionItem = ({ item, isOpen, onClick }) => {
   return (
-    <div className="border-b border-[rgba(255,255,255,0.05)]">
+    <div className="border-b border-[rgba(10,9,20,0.05)]">
       <button
         onClick={onClick}
         className="group flex w-full items-center justify-between py-10 text-left transition-colors"
@@ -35,7 +35,7 @@ const ProcessAccordionItem = ({ item, isOpen, onClick }) => {
           <span className={`font-mono text-[1.25rem] transition-colors duration-300 ${isOpen ? 'text-accent-secondary' : 'text-text-dim'}`}>
             {item.id}
           </span>
-          <h3 className={`font-display text-[1.5rem] md:text-[2.5rem] font-bold tracking-tight transition-colors duration-300 group-hover:text-white ${isOpen ? 'text-white' : 'text-text-primary'}`}>
+          <h3 className={`font-display text-[1.5rem] md:text-[2.5rem] font-bold tracking-tight transition-colors duration-300 group-hover:text-[var(--text-primary)] ${isOpen ? 'text-[var(--text-primary)]' : 'text-text-primary'}`}>
             {item.title}
           </h3>
         </div>
@@ -43,7 +43,7 @@ const ProcessAccordionItem = ({ item, isOpen, onClick }) => {
         <motion.div
           animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.4, ease: "backOut" }}
-          className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full border transition-colors duration-300 ${isOpen ? 'border-accent-secondary bg-accent-secondary/10 text-accent-secondary' : 'border-[rgba(255,255,255,0.1)] text-text-dim group-hover:border-[rgba(255,255,255,0.3)] group-hover:text-white'}`}
+          className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full border transition-colors duration-300 ${isOpen ? 'border-accent-secondary bg-accent-secondary/10 text-accent-secondary' : 'border-[rgba(10,9,20,0.1)] text-text-dim group-hover:border-[rgba(10,9,20,0.2)] group-hover:text-[var(--text-primary)]'}`}
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -70,7 +70,7 @@ const ProcessAccordionItem = ({ item, isOpen, onClick }) => {
               </p>
               <div className="flex flex-wrap gap-3">
                 {item.tags.map((tag, idx) => (
-                  <span key={idx} className="rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.03)] px-4 py-1.5 font-mono text-[11px] uppercase tracking-widest text-text-dim transition-colors duration-300 hover:border-white/30 hover:text-white">
+                  <span key={idx} className="rounded-full border border-[rgba(10,9,20,0.1)] bg-[rgba(10,9,20,0.03)] px-4 py-1.5 font-mono text-[11px] uppercase tracking-widest text-text-dim transition-colors duration-300 hover:border-[rgba(10,9,20,0.15)] hover:text-[var(--text-primary)]">
                     {tag}
                   </span>
                 ))}
@@ -95,13 +95,13 @@ export default function CreativeProcess() {
           <span className="mb-4 font-mono text-[11px] uppercase tracking-[0.25em] text-accent-secondary">
             Methodology
           </span>
-          <h2 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-extrabold tracking-tight text-white">
+          <h2 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-extrabold tracking-tight text-[var(--text-primary)]">
             The Creative Process
           </h2>
         </div>
 
         {/* Accordions */}
-        <div className="flex flex-col border-t border-[rgba(255,255,255,0.05)]">
+        <div className="flex flex-col border-t border-[rgba(10,9,20,0.05)]">
           {PROCESS_TYPES.map((item, idx) => (
             <ProcessAccordionItem 
               key={item.id} 

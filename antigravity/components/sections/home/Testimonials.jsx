@@ -83,10 +83,10 @@ export default function Testimonials() {
               animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
               exit={{ opacity: 0, x: direction * -60, filter: 'blur(4px)' }}
               transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-              className="flex flex-col justify-between rounded-[var(--radius-xl)] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)] p-8 sm:p-10 md:p-12 backdrop-blur-md"
+              className="flex flex-col justify-between rounded-[var(--radius-xl)] border border-[rgba(10,9,20,0.06)] bg-white/80 p-8 sm:p-10 md:p-12 backdrop-blur-md shadow-[var(--shadow-md)]"
             >
               {/* Decorative quote mark */}
-              <div className="absolute right-8 top-8 text-6xl font-serif text-[rgba(255,255,255,0.04)] sm:right-10 sm:top-10 select-none">
+              <div className="absolute right-8 top-8 text-6xl font-serif text-[rgba(10,9,20,0.04)] sm:right-10 sm:top-10 select-none">
                 "
               </div>
 
@@ -95,7 +95,7 @@ export default function Testimonials() {
               </p>
 
               <div className="relative z-10 flex flex-col">
-                <span className="font-display text-[1rem] font-bold text-white">
+                <span className="font-display text-[1rem] font-bold text-[var(--text-primary)]">
                   {item.name}
                 </span>
                 <span className="mt-2 font-mono text-[11px] uppercase tracking-wider text-text-dim">
@@ -112,7 +112,7 @@ export default function Testimonials() {
           <button
             onClick={goPrev}
             aria-label="Previous testimonial"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.03)] text-text-dim transition-all duration-300 hover:border-white/30 hover:text-white hover:bg-white/5"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(10,9,20,0.08)] bg-[rgba(10,9,20,0.02)] text-text-dim transition-all duration-300 hover:border-[rgba(10,9,20,0.2)] hover:text-[var(--text-primary)] hover:bg-[rgba(10,9,20,0.04)]"
           >
             <ChevronLeft size={18} />
           </button>
@@ -129,8 +129,8 @@ export default function Testimonials() {
                 aria-label={`Go to testimonial ${i + 1}`}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   i === activeIndex
-                    ? 'w-6 bg-white'
-                    : 'w-2 bg-[rgba(255,255,255,0.15)] hover:bg-[rgba(255,255,255,0.3)]'
+                    ? 'w-6 bg-[var(--accent-primary)]'
+                    : 'w-2 bg-[rgba(10,9,20,0.12)] hover:bg-[rgba(10,9,20,0.25)]'
                 }`}
               />
             ))}
@@ -140,7 +140,7 @@ export default function Testimonials() {
           <button
             onClick={goNext}
             aria-label="Next testimonial"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.03)] text-text-dim transition-all duration-300 hover:border-white/30 hover:text-white hover:bg-white/5"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(10,9,20,0.08)] bg-[rgba(10,9,20,0.02)] text-text-dim transition-all duration-300 hover:border-[rgba(10,9,20,0.2)] hover:text-[var(--text-primary)] hover:bg-[rgba(10,9,20,0.04)]"
           >
             <ChevronRight size={18} />
           </button>

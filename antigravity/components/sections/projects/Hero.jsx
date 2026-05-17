@@ -10,7 +10,7 @@ export default function Hero() {
         
         {/* Decorative Background Text */}
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.03]">
-          <span className="font-display text-[20vw] font-bold leading-none tracking-tighter text-white">
+          <span className="font-display text-[20vw] font-bold leading-none tracking-tighter text-[var(--text-primary)]">
             ARCHIVE
           </span>
         </div>

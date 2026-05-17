@@ -72,7 +72,7 @@ export default function TimelineDelivery() {
         <div className="relative mx-auto mt-20 h-64 w-[90%] md:mt-32 md:h-40 md:w-full">
           
           {/* Base empty track */}
-          <div className="absolute left-0 top-1/2 h-[2px] w-full -translate-y-1/2 rounded-full bg-[rgba(255,255,255,0.05)]" />
+          <div className="absolute left-0 top-1/2 h-[2px] w-full -translate-y-1/2 rounded-full bg-[rgba(10,9,20,0.05)]" />
           
           {/* Animated Fill Track */}
           <div 
@@ -93,7 +93,7 @@ export default function TimelineDelivery() {
                 style={{ left: phase.position }}
               >
                 {/* Node Point */}
-                <div className="z-10 h-5 w-5 rounded-full border-[3px] border-void bg-accent-secondary shadow-[0_0_15px_var(--accent-secondary)] transition-transform duration-300 hover:scale-150" />
+                <div className="z-10 h-5 w-5 rounded-full border-[3px] border-white bg-accent-secondary shadow-[0_0_15px_var(--accent-secondary)] transition-transform duration-300 hover:scale-150" />
                 
                 {/* Content */}
                 <div 
@@ -101,7 +101,7 @@ export default function TimelineDelivery() {
                     isTop ? 'bottom-8 md:bottom-10' : 'top-8 md:top-10'
                   }`}
                 >
-                  <span className="font-display text-[1rem] font-bold leading-tight text-white md:text-[1.125rem]">
+                  <span className="font-display text-[1rem] font-bold leading-tight text-[var(--text-primary)] md:text-[1.125rem]">
                     {phase.name}
                   </span>
                   <span className="mt-2 font-mono text-[11px] uppercase tracking-widest text-accent-primary md:text-[12px]">

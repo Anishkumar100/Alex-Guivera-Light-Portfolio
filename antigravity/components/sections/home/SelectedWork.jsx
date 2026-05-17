@@ -43,7 +43,7 @@ const ProjectCard = ({ project, className, large = false }) => {
         rotateX: useTransform(y, [-0.5, 0.5], [6, -6]),
         transformStyle: 'preserve-3d',
       }}
-      className={`group relative flex flex-col justify-end overflow-hidden rounded-[var(--radius-xl)] border border-[rgba(255,255,255,0.06)] bg-void-2 cursor-pointer transition-colors duration-500 hover:border-[rgba(255,255,255,0.15)] ${className}`}
+      className={`group relative flex flex-col justify-end overflow-hidden rounded-[var(--radius-xl)] border border-[rgba(10,9,20,0.06)] bg-void-2 cursor-pointer transition-colors duration-500 hover:border-[rgba(10,9,20,0.12)] ${className}`}
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0 transition-transform duration-700 ease-out group-hover:scale-105">
@@ -51,8 +51,8 @@ const ProjectCard = ({ project, className, large = false }) => {
       </div>
 
       {/* Overlays */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-t from-void via-void/40 to-transparent" />
-      <div className="absolute inset-0 z-10 bg-white/5 opacity-0 transition-opacity duration-500 mix-blend-overlay group-hover:opacity-100" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-t from-white via-white/40 to-transparent" />
+      <div className="absolute inset-0 z-10 bg-[rgba(10,9,20,0.03)] opacity-0 transition-opacity duration-500 mix-blend-multiply group-hover:opacity-100" />
 
       {/* Content */}
       <div
@@ -65,7 +65,7 @@ const ProjectCard = ({ project, className, large = false }) => {
           </span>
         </div>
 
-        <h3 className={`font-display font-extrabold text-white ${large ? 'text-[clamp(1.5rem,3vw,2.5rem)]' : 'text-[clamp(1.25rem,2vw,1.75rem)]'}`}>
+        <h3 className={`font-display font-extrabold text-[var(--text-primary)] ${large ? 'text-[clamp(1.5rem,3vw,2.5rem)]' : 'text-[clamp(1.25rem,2vw,1.75rem)]'}`}>
           {project.name}
         </h3>
 
@@ -123,7 +123,7 @@ export default function SelectedWork() {
 
         {/* Section Header */}
         <div className="relative mb-20 sm:mb-24 flex flex-col items-center justify-center text-center" ref={headerRef}>
-          <div className="absolute left-1/2 top-1/2 -z-10 h-[100px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10 blur-[80px]" />
+          <div className="absolute left-1/2 top-1/2 -z-10 h-[100px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[rgba(80,70,229,0.06)] blur-[80px]" />
           <span className="mb-4 font-mono text-[11px] tracking-[0.25em] text-accent-secondary uppercase">
             Selected
           </span>

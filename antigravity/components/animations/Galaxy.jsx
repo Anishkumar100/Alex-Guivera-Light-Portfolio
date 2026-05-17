@@ -16,7 +16,7 @@ void main() {
 const fragmentShader = `
 precision highp float;
 
-#define NUM_LAYER 3.0
+#define NUM_LAYER 2.0
 #define PERIOD 4.0
 #define STAR_COLOR_CUTOFF 0.2
 #define MAT45 mat2(0.7071, -0.7071, 0.7071, 0.7071)
@@ -168,7 +168,7 @@ export default function Galaxy({
   twinkleIntensity = 0.3,
   rotationSpeed = 0.05,
   autoCenterRepulsion = 0,
-  transparent = false,
+  transparent = true,
   className = "",
   ...rest
 }) {
@@ -181,7 +181,7 @@ export default function Galaxy({
   useEffect(() => {
     if (!ctnDom.current) return;
     const ctn = ctnDom.current;
-    const renderer = new Renderer({ alpha: transparent, premultipliedAlpha: false });
+    const renderer = new Renderer({ alpha: true, premultipliedAlpha: false });
     const gl = renderer.gl;
 
     if (transparent) {
@@ -195,8 +195,8 @@ export default function Galaxy({
     let program;
 
     function resize() {
-      // Cap pixelRatio severely to 0.75 to ensure 0 lag on weaker devices
-      const pixelRatio = Math.min(window.devicePixelRatio || 1, 0.75);
+      // Cap pixelRatio severely to 0.5 to ensure 0 lag on weaker devices
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 0.5);
       renderer.setSize(ctn.offsetWidth * pixelRatio, ctn.offsetHeight * pixelRatio);
       gl.canvas.style.width = '100%';
       gl.canvas.style.height = '100%';
@@ -308,7 +308,7 @@ export default function Galaxy({
     <div
       ref={ctnDom}
       className={`pointer-events-none absolute inset-0 z-0 h-full w-full overflow-hidden ${className}`}
-      style={{ opacity: 0.7 }}
+      style={{ opacity: 1.0, filter: 'invert(1) hue-rotate(180deg)' }}
       {...rest}
     />
   );

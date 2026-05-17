@@ -2,15 +2,14 @@
 
 export default function DottedSurface() {
   return (
-    <div className="pointer-events-none fixed inset-0 z-[-1] h-screen w-screen opacity-40">
+    <div className="pointer-events-none fixed inset-0 z-[-1] h-screen w-screen opacity-35">
       {/* 
-        This creates a seamless, high-performance CSS radial-gradient dot pattern 
-        perfect for the 'dark void' aesthetic. 
+        Indigo dot pattern on white canvas — subtle editorial texture.
       */}
       <div 
         className="absolute inset-0 h-full w-full"
         style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(80,70,229,0.12) 1px, transparent 0)`,
           backgroundSize: '32px 32px',
         }}
       />

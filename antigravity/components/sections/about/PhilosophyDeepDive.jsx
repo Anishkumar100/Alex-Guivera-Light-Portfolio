@@ -79,7 +79,7 @@ const WobbleCard = ({ belief, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, delay: index * 0.2 }}
-      className="group relative flex w-full flex-col justify-between rounded-[var(--radius-2xl)] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] p-10 shadow-2xl backdrop-blur-xl transition-colors duration-500 hover:bg-[rgba(255,255,255,0.05)] md:h-[450px]"
+      className="group relative flex w-full flex-col justify-between rounded-[var(--radius-2xl)] border border-[rgba(10,9,20,0.08)] bg-[rgba(10,9,20,0.02)] p-10 shadow-2xl backdrop-blur-xl transition-colors duration-500 hover:bg-[rgba(10,9,20,0.05)] md:h-[450px]"
     >
       {/* Dynamic Hover Glow */}
       <div 
@@ -91,7 +91,7 @@ const WobbleCard = ({ belief, index }) => {
       />
 
       <div style={{ transform: "translateZ(40px)" }}>
-        <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-[rgba(255,255,255,0.05)] text-white shadow-[0_0_15px_rgba(255,255,255,0.05)] transition-transform duration-300 group-hover:scale-110 group-hover:text-accent-primary">
+        <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-[rgba(10,9,20,0.05)] text-[var(--text-primary)] shadow-[0_0_15px_rgba(10,9,20,0.05)] transition-transform duration-300 group-hover:scale-110 group-hover:text-accent-primary">
           {belief.icon}
         </div>
         <h3 className="mb-4 font-display text-[1.5rem] font-bold tracking-wide text-text-primary">
@@ -113,7 +113,7 @@ export default function PhilosophyDeepDive() {
     <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-6 py-32 md:px-12">
       
       {/* ReactBits Aurora Background Approximation */}
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-50 mix-blend-screen">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-50 mix-blend-multiply">
         <motion.div 
           animate={{ 
             x: [0, 100, -100, 0],

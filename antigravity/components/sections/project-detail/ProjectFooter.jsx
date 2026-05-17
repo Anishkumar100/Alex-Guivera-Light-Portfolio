@@ -29,11 +29,11 @@ export default function ProjectFooter() {
   return (
     <>
       {/* Section 7: More Projects */}
-      <section className="relative w-full bg-void px-6 py-32 md:px-12 md:py-40">
+      <section className="relative w-full bg-white px-6 py-32 md:px-12 md:py-40">
         <div className="mx-auto w-full max-w-[1400px]">
           
           <div className="mb-16 flex items-center justify-between">
-            <h2 className="font-display text-[2rem] font-bold tracking-tight text-white md:text-[3rem]">
+            <h2 className="font-display text-[2rem] font-bold tracking-tight text-[var(--text-primary)] md:text-[3rem]">
               More Work
             </h2>
             <Link href="/projects" className="group flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-text-dim transition-colors hover:text-accent-primary">
@@ -53,7 +53,7 @@ export default function ProjectFooter() {
               >
                 <Link href={proj.link} className="group relative flex w-full flex-col gap-6">
                   {/* Tilted Card Simulation */}
-                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[var(--radius-lg)] border border-[rgba(255,255,255,0.05)] bg-void-1 shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[var(--radius-lg)] border border-[rgba(10,9,20,0.05)] bg-void-1 shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
                     <img src={proj.image} alt={proj.title} className="h-full w-full object-cover opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
                     {/* Hover Glow */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[rgba(108,99,255,0.5)] to-transparent opacity-0 transition-opacity duration-500 mix-blend-overlay group-hover:opacity-100" />
@@ -62,7 +62,7 @@ export default function ProjectFooter() {
                     <span className="mb-2 block font-mono text-[11px] uppercase tracking-widest text-text-dim">
                       {proj.category}
                     </span>
-                    <h3 className="font-display text-[1.5rem] font-bold text-white transition-colors duration-300 group-hover:text-accent-primary">
+                    <h3 className="font-display text-[1.5rem] font-bold text-[var(--text-primary)] transition-colors duration-300 group-hover:text-accent-primary">
                       {proj.title}
                     </h3>
                   </div>
@@ -75,10 +75,10 @@ export default function ProjectFooter() {
       </section>
 
       {/* Section 8: Final Project CTA */}
-      <section className="relative flex min-h-[50vh] w-full flex-col items-center justify-center overflow-hidden border-t border-[rgba(255,255,255,0.05)] bg-void py-32">
+      <section className="relative flex min-h-[50vh] w-full flex-col items-center justify-center overflow-hidden border-t border-[rgba(10,9,20,0.05)] bg-white py-32">
         
         {/* Subtle Background Beams Simulation */}
-        <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_20%,transparent_100%)] opacity-30" />
+        <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(10,9,20,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(10,9,20,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_20%,transparent_100%)] opacity-30" />
 
         <div className="relative z-10 flex w-full max-w-[800px] flex-col items-center px-6 text-center">
           <motion.h2
@@ -86,7 +86,7 @@ export default function ProjectFooter() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-12 font-display text-[clamp(2.5rem,6vw,5rem)] font-extrabold leading-[1.05] tracking-tight text-white"
+            className="mb-12 font-display text-[clamp(2.5rem,6vw,5rem)] font-extrabold leading-[1.05] tracking-tight text-[var(--text-primary)]"
           >
             Liked this project? <br />
             <span className="text-text-secondary">Let's make yours.</span>

@@ -7,7 +7,7 @@ import { motion, useInView } from 'motion/react';
 
 const CurrentObsession = () => {
   return (
-    <div className="flex h-full w-full flex-col justify-between rounded-[var(--radius-lg)] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)] p-8 backdrop-blur-md transition-colors duration-500 hover:border-accent-primary/50 hover:bg-[rgba(255,255,255,0.04)]">
+    <div className="flex h-full w-full flex-col justify-between rounded-[var(--radius-lg)] border border-[rgba(10,9,20,0.06)] bg-[rgba(10,9,20,0.02)] p-8 backdrop-blur-md transition-colors duration-500 hover:border-accent-primary/50 hover:bg-[rgba(10,9,20,0.04)]">
       <div>
         <span className="font-mono text-[11px] uppercase tracking-widest text-accent-secondary">
           Cell 01
@@ -42,7 +42,7 @@ const CurrentObsession = () => {
 const ToolsUsed = () => {
   const tools = ['Figma', 'React', 'GSAP', 'Next.js', 'Spline', 'Vercel'];
   return (
-    <div className="flex h-full w-full flex-col justify-between rounded-[var(--radius-lg)] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)] p-8 backdrop-blur-md transition-colors duration-500 hover:border-accent-primary/50 hover:bg-[rgba(255,255,255,0.04)]">
+    <div className="flex h-full w-full flex-col justify-between rounded-[var(--radius-lg)] border border-[rgba(10,9,20,0.06)] bg-[rgba(10,9,20,0.02)] p-8 backdrop-blur-md transition-colors duration-500 hover:border-accent-primary/50 hover:bg-[rgba(10,9,20,0.04)]">
       <span className="font-mono text-[11px] uppercase tracking-widest text-accent-secondary">
         Cell 02
       </span>
@@ -59,7 +59,7 @@ const ToolsUsed = () => {
 
 const LocationTime = () => {
   return (
-    <div className="group relative flex h-full w-full flex-col justify-between overflow-hidden rounded-[var(--radius-lg)] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)] p-8 backdrop-blur-md transition-colors duration-500 hover:border-accent-primary/50 hover:bg-[rgba(255,255,255,0.04)]">
+    <div className="group relative flex h-full w-full flex-col justify-between overflow-hidden rounded-[var(--radius-lg)] border border-[rgba(10,9,20,0.06)] bg-[rgba(10,9,20,0.02)] p-8 backdrop-blur-md transition-colors duration-500 hover:border-accent-primary/50 hover:bg-[rgba(10,9,20,0.04)]">
       <span className="font-mono text-[11px] uppercase tracking-widest text-accent-secondary z-10">
         Cell 03
       </span>
@@ -79,7 +79,7 @@ const LocationTime = () => {
 
 const ListeningTo = () => {
   return (
-    <div className="group flex h-full w-full flex-col justify-between rounded-[var(--radius-lg)] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)] p-8 backdrop-blur-md transition-colors duration-500 hover:border-accent-primary/50 hover:bg-[rgba(255,255,255,0.04)]">
+    <div className="group flex h-full w-full flex-col justify-between rounded-[var(--radius-lg)] border border-[rgba(10,9,20,0.06)] bg-[rgba(10,9,20,0.02)] p-8 backdrop-blur-md transition-colors duration-500 hover:border-accent-primary/50 hover:bg-[rgba(10,9,20,0.04)]">
       <span className="font-mono text-[11px] uppercase tracking-widest text-accent-secondary">
         Cell 04
       </span>
@@ -107,7 +107,7 @@ const ListeningTo = () => {
 
 const Quote = () => {
   return (
-    <div className="flex h-full w-full flex-col justify-center rounded-[var(--radius-lg)] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)] p-8 md:p-12 backdrop-blur-md transition-colors duration-500 hover:border-accent-primary/50 hover:bg-[rgba(255,255,255,0.04)]">
+    <div className="flex h-full w-full flex-col justify-center rounded-[var(--radius-lg)] border border-[rgba(10,9,20,0.06)] bg-[rgba(10,9,20,0.02)] p-8 md:p-12 backdrop-blur-md transition-colors duration-500 hover:border-accent-primary/50 hover:bg-[rgba(10,9,20,0.04)]">
       <span className="font-mono text-[11px] uppercase tracking-widest text-accent-secondary mb-6">
         Cell 05
       </span>

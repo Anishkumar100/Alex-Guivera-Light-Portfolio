@@ -30,7 +30,7 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.3 }}
         className={`fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 md:px-12 transition-all duration-500 ${isScrolled
-            ? 'py-3 bg-[rgba(5,5,7,0.85)] backdrop-blur-xl border-b border-white/[0.04] shadow-[0_4px_30px_rgba(0,0,0,0.3)]'
+            ? 'py-3 bg-[rgba(255,255,255,0.85)] backdrop-blur-xl border-b border-[rgba(10,9,20,0.08)] shadow-[var(--shadow-md)]'
             : 'py-6 bg-transparent'
           }`}
       >
@@ -40,29 +40,29 @@ export default function Navbar() {
           className="group flex items-center gap-2"
           onClick={() => setIsMobileMenuOpen(false)}
         >
-          <div className="relative flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] transition-all duration-300 group-hover:border-white/20 group-hover:bg-white/[0.06]">
-            <span className="font-display text-[14px] font-extrabold text-white tracking-tight">AG</span>
+          <div className="relative flex h-9 w-9 items-center justify-center rounded-lg border border-[rgba(10,9,20,0.08)] bg-[rgba(10,9,20,0.03)] transition-all duration-300 group-hover:border-[rgba(10,9,20,0.15)] group-hover:bg-[rgba(10,9,20,0.06)]">
+            <span className="font-display text-[14px] font-extrabold text-[var(--accent-primary)] tracking-tight">AG</span>
           </div>
-          <span className="hidden sm:block font-display text-[14px] font-bold text-white/60 tracking-wider uppercase">
+          <span className="hidden sm:block font-display text-[14px] font-bold text-[var(--text-secondary)] tracking-wider uppercase">
             Alex Guivera
           </span>
         </Link>
 
         {/* Desktop Links — Centered */}
-        <div className="hidden md:flex items-center gap-1 rounded-full border border-white/[0.04] bg-white/[0.02] px-2 py-1.5 backdrop-blur-md">
+        <div className="hidden md:flex items-center gap-1 rounded-full border border-[rgba(10,9,20,0.06)] bg-[rgba(255,255,255,0.60)] px-2 py-1.5 backdrop-blur-md">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.path;
             return (
               <Link
                 key={link.name}
                 href={link.path}
-                className={`relative px-4 py-1.5 font-body text-[13px] font-medium tracking-wide rounded-full transition-colors duration-300 ${isActive ? 'text-white' : 'text-white/50 hover:text-white/80'
+                className={`relative px-4 py-1.5 font-body text-[13px] font-medium tracking-wide rounded-full transition-colors duration-300 ${isActive ? 'text-[var(--accent-primary)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                   }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="nav-active-pill"
-                    className="absolute inset-0 rounded-full bg-white/[0.08] border border-white/[0.06]"
+                    className="absolute inset-0 rounded-full bg-[rgba(80,70,229,0.08)] border border-[rgba(80,70,229,0.12)]"
                     transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                   />
                 )}
@@ -75,7 +75,7 @@ export default function Navbar() {
         {/* Right side — CTA + Mobile Toggle */}
         <div className="flex items-center gap-4">
           <Link href="/contact" className="hidden md:block">
-            <button className="group relative overflow-hidden rounded-full border border-white/10 bg-white px-5 py-2 font-body text-[13px] font-semibold text-[#050507] transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+            <button className="group relative overflow-hidden rounded-full border-2 border-[var(--accent-primary)] bg-transparent px-5 py-2 font-body text-[13px] font-semibold text-[var(--accent-primary)] transition-all duration-300 hover:bg-[var(--accent-primary)] hover:text-white hover:shadow-[var(--shadow-accent)]">
               <span className="relative z-10">Let's Talk</span>
             </button>
           </Link>
@@ -88,15 +88,15 @@ export default function Navbar() {
           >
             <motion.span
               animate={isMobileMenuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
-              className="h-[1.5px] w-5 bg-white rounded-full origin-center"
+              className="h-[1.5px] w-5 bg-[var(--text-primary)] rounded-full origin-center"
             />
             <motion.span
               animate={isMobileMenuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
-              className="h-[1.5px] w-5 bg-white rounded-full"
+              className="h-[1.5px] w-5 bg-[var(--text-primary)] rounded-full"
             />
             <motion.span
               animate={isMobileMenuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
-              className="h-[1.5px] w-5 bg-white rounded-full origin-center"
+              className="h-[1.5px] w-5 bg-[var(--text-primary)] rounded-full origin-center"
             />
           </button>
         </div>
@@ -110,7 +110,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[95] flex flex-col items-center justify-center bg-[#050507]/98 backdrop-blur-xl"
+            className="fixed inset-0 z-[95] flex flex-col items-center justify-center bg-[rgba(248,247,255,0.98)] backdrop-blur-xl"
           >
             <div className="flex flex-col items-center gap-6">
               {NAV_LINKS.map((link, i) => {
@@ -126,7 +126,7 @@ export default function Navbar() {
                     <Link
                       href={link.path}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`font-display text-[2.5rem] sm:text-[3rem] font-bold tracking-tight transition-colors ${isActive ? 'text-white' : 'text-white/30 hover:text-white/60'
+                      className={`font-display text-[2.5rem] sm:text-[3rem] font-bold tracking-tight transition-colors ${isActive ? 'text-[var(--accent-primary)]' : 'text-[var(--text-dim)] hover:text-[var(--text-primary)]'
                         }`}
                     >
                       {link.name}
@@ -144,7 +144,7 @@ export default function Navbar() {
               className="mt-12"
             >
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                <button className="rounded-full bg-white px-8 py-3 font-display text-[1rem] font-bold text-[#050507] shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+                <button className="rounded-full bg-[var(--accent-primary)] px-8 py-3 font-display text-[1rem] font-bold text-white shadow-[var(--shadow-accent)]">
                   Let's Talk
                 </button>
               </Link>
@@ -154,7 +154,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="absolute bottom-8 font-mono text-[11px] text-white/20 tracking-widest uppercase"
+              className="absolute bottom-8 font-mono text-[11px] text-[var(--text-dim)] tracking-widest uppercase"
             >
               hello@antigravity.io
             </motion.p>

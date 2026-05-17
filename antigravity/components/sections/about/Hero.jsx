@@ -106,7 +106,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-8 origin-top border-l-4 border-white pl-6"
           >
-            <p className="font-display text-[1.3rem] font-semibold italic leading-relaxed text-white">
+            <p className="font-display text-[1.3rem] font-semibold italic leading-relaxed text-[var(--text-primary)]">
               "Design is not what it looks like. Design is how it makes people feel — and I refuse to make people feel nothing."
             </p>
           </motion.div>
@@ -116,7 +116,7 @@ export default function Hero() {
         <div className="relative flex w-full justify-center md:w-[40%] lg:w-[45%] md:justify-end">
           
           {/* Aceternity Spotlight Background Radial */}
-          <div className="absolute left-1/2 top-1/2 -z-10 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10 blur-[100px]" />
+          <div className="absolute left-1/2 top-1/2 -z-10 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[rgba(80,70,229,0.06)] blur-[100px]" />
           
           <div className="relative w-full max-w-[400px] md:max-w-[500px] [perspective:1000px]">
             <motion.div
@@ -131,7 +131,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9, filter: 'blur(20px)' }}
               animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
               transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
-              className="group relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-xl)] border border-[rgba(255,255,255,0.06)] bg-void-2 shadow-2xl transition-colors duration-500 hover:border-[rgba(255,255,255,0.15)] hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]"
+              className="group relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-xl)] border border-[rgba(10,9,20,0.06)] bg-void-2 shadow-2xl transition-colors duration-500 hover:border-[rgba(10,9,20,0.15)] hover:shadow-[0_0_40px_rgba(10,9,20,0.08)]"
             >
               {/* Professional Portrait Image */}
               <img 
@@ -139,14 +139,14 @@ export default function Hero() {
                 alt="Alex Antigravity — Portrait" 
                 className="absolute inset-0 h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-void via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
 
               {/* Inner Vignette */}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]" />
 
               {/* Floating Badge (Z-translated for 3D effect) */}
               <div 
-                className="absolute right-6 top-6 rounded-full border border-[rgba(255,255,255,0.1)] bg-void-1/80 px-4 py-2 backdrop-blur-md"
+                className="absolute right-6 top-6 rounded-full border border-[rgba(10,9,20,0.1)] bg-void-1/80 px-4 py-2 backdrop-blur-md"
                 style={{ transform: 'translateZ(50px)' }}
               >
                 <div className="flex items-center gap-3">

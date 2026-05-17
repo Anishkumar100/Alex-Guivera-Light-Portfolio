@@ -16,7 +16,7 @@ const SERVICES = [
     borderGlow: "group-hover:border-accent-primary/50",
     badge: null,
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10 text-white transition-colors duration-300 group-hover:text-accent-primary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10 text-[var(--text-primary)] transition-colors duration-300 group-hover:text-accent-primary">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
         <circle cx="12" cy="10" r="2" fill="currentColor" stroke="none" />
       </svg>
@@ -34,7 +34,7 @@ const SERVICES = [
     borderGlow: "group-hover:border-accent-secondary/50",
     badge: "MOST REQUESTED",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10 text-white transition-colors duration-300 group-hover:text-accent-secondary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10 text-[var(--text-primary)] transition-colors duration-300 group-hover:text-accent-secondary">
         <rect x="3" y="3" width="18" height="18" rx="2" strokeLinecap="round" strokeLinejoin="round" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 9h18M9 21V9" />
         <circle cx="15" cy="15" r="2" fill="currentColor" stroke="none" />
@@ -53,7 +53,7 @@ const SERVICES = [
     borderGlow: "group-hover:border-accent-hot/50",
     badge: null,
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10 text-white transition-colors duration-300 group-hover:text-accent-hot">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10 text-[var(--text-primary)] transition-colors duration-300 group-hover:text-accent-hot">
         <path strokeLinecap="round" strokeLinejoin="round" d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12" />
         <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none" />
@@ -86,7 +86,7 @@ const ServiceCard = ({ service, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
-      className={`group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-2xl)] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)] p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 md:p-10 ${service.borderGlow} ${service.badge ? 'shadow-[0_0_30px_rgba(0,245,212,0.05)]' : ''}`}
+      className={`group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-2xl)] border border-[rgba(10,9,20,0.06)] bg-[rgba(10,9,20,0.02)] p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 md:p-10 ${service.borderGlow} ${service.badge ? 'shadow-[0_0_30px_rgba(0,245,212,0.05)]' : ''}`}
     >
       {/* Spotlight Effect Layer */}
       <div 
@@ -100,7 +100,7 @@ const ServiceCard = ({ service, index }) => {
       <div className="relative z-10 flex flex-grow flex-col">
         {/* Header */}
         <div className="mb-10 flex items-start justify-between">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.05)] shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:bg-[rgba(255,255,255,0.06)]">
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[rgba(10,9,20,0.03)] border border-[rgba(10,9,20,0.05)] shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:bg-[rgba(10,9,20,0.06)]">
             {service.icon}
           </div>
           {service.badge && (
@@ -112,7 +112,7 @@ const ServiceCard = ({ service, index }) => {
 
         {/* Titles */}
         <div className="mb-6">
-          <h3 className="mb-2 font-display text-[2.5rem] font-extrabold tracking-tight text-white">
+          <h3 className="mb-2 font-display text-[2.5rem] font-extrabold tracking-tight text-[var(--text-primary)]">
             {service.title}
           </h3>
           <p className={`font-display text-[1.125rem] italic tracking-wide ${service.accentText}`}>
@@ -132,7 +132,7 @@ const ServiceCard = ({ service, index }) => {
           </span>
           <div className="flex flex-wrap gap-2">
             {service.deliverables.map((item, i) => (
-              <span key={i} className="rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.05)] px-3 py-1.5 font-mono text-[11px] text-text-secondary transition-colors duration-300 group-hover:border-[rgba(255,255,255,0.1)] group-hover:text-white">
+              <span key={i} className="rounded-md bg-[rgba(10,9,20,0.03)] border border-[rgba(10,9,20,0.05)] px-3 py-1.5 font-mono text-[11px] text-text-secondary transition-colors duration-300 group-hover:border-[rgba(10,9,20,0.1)] group-hover:text-[var(--text-primary)]">
                 {item}
               </span>
             ))}
@@ -140,15 +140,15 @@ const ServiceCard = ({ service, index }) => {
         </div>
 
         {/* Footer: Price and CTA */}
-        <div className="mt-auto flex items-center justify-between border-t border-[rgba(255,255,255,0.05)] pt-8">
+        <div className="mt-auto flex items-center justify-between border-t border-[rgba(10,9,20,0.05)] pt-8">
           <span className={`font-mono text-[14px] ${service.accentText}`}>
             {service.price}
           </span>
-          <button className="group/btn relative flex items-center gap-2 overflow-hidden rounded-full border border-[rgba(255,255,255,0.1)] bg-transparent px-6 py-2 transition-colors duration-300 hover:border-white hover:bg-white">
-            <span className="font-mono text-[12px] uppercase tracking-widest text-white transition-colors duration-300 group-hover/btn:text-void">
+          <button className="group/btn relative flex items-center gap-2 overflow-hidden rounded-full border border-[rgba(10,9,20,0.1)] bg-transparent px-6 py-2 transition-colors duration-300 hover:border-[var(--accent-primary)] hover:bg-[var(--accent-primary)]">
+            <span className="font-mono text-[12px] uppercase tracking-widest text-[var(--text-primary)] transition-colors duration-300 group-hover/btn:text-white">
               Inquire
             </span>
-            <span className="text-white transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:text-void">
+            <span className="text-[var(--text-primary)] transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:text-white">
               →
             </span>
           </button>

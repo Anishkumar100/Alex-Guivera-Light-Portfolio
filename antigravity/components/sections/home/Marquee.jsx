@@ -29,9 +29,9 @@ const MarqueeRow = ({ items, direction = 1, duration = 40 }) => {
         {[...items, ...items, ...items, ...items].map((item, idx) => (
           <div 
             key={`${item}-${idx}`} 
-            className="group/pill mx-2 flex shrink-0 cursor-default items-center justify-center rounded-full border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] px-6 py-2 transition-all duration-300 hover:border-accent-primary hover:bg-accent-primary/20 hover:shadow-[0_0_15px_rgba(108,99,255,0.2)]"
+            className="group/pill mx-2 flex shrink-0 cursor-default items-center justify-center rounded-full border border-[rgba(10,9,20,0.06)] bg-[rgba(10,9,20,0.02)] px-6 py-2 transition-all duration-300 hover:border-accent-primary hover:bg-[rgba(80,70,229,0.06)] hover:shadow-[var(--shadow-accent)]"
           >
-            <span className="font-display text-[1rem] font-bold tracking-[0.08em] text-text-secondary transition-colors duration-300 group-hover/pill:text-white">
+            <span className="font-display text-[1rem] font-bold tracking-[0.08em] text-text-secondary transition-colors duration-300 group-hover/pill:text-[var(--text-primary)]">
               {item}
             </span>
           </div>
@@ -43,7 +43,7 @@ const MarqueeRow = ({ items, direction = 1, duration = 40 }) => {
 
 export default function Marquee() {
   return (
-    <section className="relative flex h-[120px] w-full flex-col justify-center overflow-hidden border-y border-[rgba(255,255,255,0.06)] bg-void-2 py-4">
+    <section className="relative flex h-[120px] w-full flex-col justify-center overflow-hidden border-y border-[rgba(10,9,20,0.06)] bg-void-2 py-4">
       <MarqueeRow items={ROW_ONE} direction={1} duration={40} />
       <div className="mt-3" />
       <MarqueeRow items={ROW_TWO} direction={-1} duration={50} />

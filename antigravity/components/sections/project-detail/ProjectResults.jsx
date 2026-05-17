@@ -20,7 +20,7 @@ function ResultCounter({ value, prefix = "", suffix = "" }) {
   }, [value, isInView]);
 
   return (
-    <span ref={ref} className="font-display text-[3.5rem] font-bold text-white md:text-[5rem]">
+    <span ref={ref} className="font-display text-[3.5rem] font-bold text-[var(--text-primary)] md:text-[5rem]">
       {prefix}{displayValue}{suffix}
     </span>
   );
@@ -37,7 +37,7 @@ export default function ProjectResults() {
     <section className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-void-2 py-32 md:py-40">
       
       {/* Aurora Background Simulation */}
-      <div className="absolute inset-0 z-0 opacity-30 mix-blend-screen">
+      <div className="absolute inset-0 z-0 opacity-30 mix-blend-multiply">
         <motion.div 
           animate={{ 
             x: ["-20%", "20%", "-20%"],
@@ -72,7 +72,7 @@ export default function ProjectResults() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.15 }}
-              className="flex flex-col items-center text-center rounded-[var(--radius-xl)] bg-void/50 p-10 backdrop-blur-md border border-[rgba(255,255,255,0.05)] shadow-2xl"
+              className="flex flex-col items-center text-center rounded-[var(--radius-xl)] bg-white/50 p-10 backdrop-blur-md border border-[rgba(10,9,20,0.05)] shadow-2xl"
             >
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-accent-primary/20 text-accent-primary">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

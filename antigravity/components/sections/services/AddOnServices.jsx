@@ -101,15 +101,15 @@ const TiltedCard = ({ addon, index }) => {
           rotateY,
           transformStyle: "preserve-3d",
         }}
-        className="group relative flex h-full flex-col justify-between rounded-[var(--radius-xl)] border border-[rgba(255,255,255,0.05)] bg-[rgba(255,255,255,0.02)] p-8 transition-colors duration-500 hover:border-[rgba(255,255,255,0.12)] hover:bg-[rgba(255,255,255,0.04)]"
+        className="group relative flex h-full flex-col justify-between rounded-[var(--radius-xl)] border border-[rgba(10,9,20,0.05)] bg-[rgba(10,9,20,0.02)] p-8 transition-colors duration-500 hover:border-[rgba(10,9,20,0.12)] hover:bg-[rgba(10,9,20,0.04)]"
       >
         {/* Inner Content translated slightly on Z-axis to enhance 3D pop */}
         <div style={{ transform: "translateZ(30px)" }}>
           <div className="mb-6 flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-[rgba(255,255,255,0.05)] bg-[rgba(255,255,255,0.03)] text-accent-secondary shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:bg-accent-secondary/10">
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-[rgba(10,9,20,0.05)] bg-[rgba(10,9,20,0.03)] text-accent-secondary shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:bg-accent-secondary/10">
               {addon.icon}
             </div>
-            <h3 className="font-display text-[1.25rem] font-bold text-white">
+            <h3 className="font-display text-[1.25rem] font-bold text-[var(--text-primary)]">
               {addon.title}
             </h3>
           </div>
@@ -119,11 +119,11 @@ const TiltedCard = ({ addon, index }) => {
           </p>
         </div>
 
-        <div style={{ transform: "translateZ(20px)" }} className="mt-auto flex items-center justify-between border-t border-[rgba(255,255,255,0.05)] pt-6 transition-colors duration-500 group-hover:border-[rgba(255,255,255,0.1)]">
+        <div style={{ transform: "translateZ(20px)" }} className="mt-auto flex items-center justify-between border-t border-[rgba(10,9,20,0.05)] pt-6 transition-colors duration-500 group-hover:border-[rgba(10,9,20,0.1)]">
           <span className="font-mono text-[13px] text-accent-primary">
             {addon.price}
           </span>
-          <span className="font-mono text-[11px] uppercase tracking-widest text-text-dim transition-colors group-hover:text-white">
+          <span className="font-mono text-[11px] uppercase tracking-widest text-text-dim transition-colors group-hover:text-[var(--text-primary)]">
             Add-On →
           </span>
         </div>

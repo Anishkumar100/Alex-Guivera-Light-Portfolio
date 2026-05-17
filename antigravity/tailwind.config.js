@@ -26,9 +26,13 @@ module.exports = {
         accent:  'var(--font-accent)',
       },
       boxShadow: {
-        'glow-primary':   'var(--glow-primary)',
-        'glow-secondary': 'var(--glow-secondary)',
-        'glow-hot':       'var(--glow-hot)',
+        'glow-primary':   'var(--shadow-accent)',
+        'glow-secondary': 'var(--shadow-secondary)',
+        'glow-hot':       'var(--shadow-hot)',
+        'sm':             'var(--shadow-sm)',
+        'md':             'var(--shadow-md)',
+        'lg':             'var(--shadow-lg)',
+        'xl':             'var(--shadow-xl)',
       },
       animation: {
         'marquee-right': 'marquee-right 40s linear infinite',

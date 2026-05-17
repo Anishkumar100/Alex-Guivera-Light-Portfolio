@@ -54,9 +54,9 @@ const BeamCollisionBackground = () => {
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden">
-      {/* Grid overlay — no opaque bg-void so LightPillar shows through */}
+      {/* Grid overlay — no opaque bg-white so LightPillar shows through */}
       {/* Grid overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(10,9,20,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(10,9,20,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
       
       <AnimatePresence>
         {beams.map(beam => (
@@ -78,7 +78,7 @@ const BeamCollisionBackground = () => {
       </AnimatePresence>
 
       {/* Bottom fade mask to blend the collision line */}
-      <div className="absolute bottom-0 h-[20vh] w-full bg-gradient-to-t from-void via-void to-transparent" />
+      <div className="absolute bottom-0 h-[20vh] w-full bg-gradient-to-t from-white via-white to-transparent" />
     </div>
   );
 };
@@ -137,10 +137,10 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
           animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
           transition={{ duration: 1.2, delay: 1.5, ease: "easeOut" }}
-          className="mt-12 rounded-full border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] px-10 py-4 backdrop-blur-md shadow-[0_0_30px_rgba(0,0,0,0.5)]"
+          className="mt-12 rounded-full border border-[rgba(10,9,20,0.08)] bg-[rgba(10,9,20,0.02)] px-10 py-4 backdrop-blur-md shadow-[var(--shadow-md)]"
         >
           <p className="font-body text-[1.25rem] font-light text-text-secondary tracking-wide">
-            Not a menu. <span className="font-medium text-white italic ml-1">A commitment.</span>
+            Not a menu. <span className="font-medium text-[var(--text-primary)] italic ml-1">A commitment.</span>
           </p>
         </motion.div>
       </div>

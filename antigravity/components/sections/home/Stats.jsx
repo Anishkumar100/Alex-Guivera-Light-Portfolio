@@ -46,13 +46,13 @@ export default function Stats() {
   return (
     <section 
       ref={containerRef}
-      className="relative flex min-h-[50vh] w-full items-center justify-center overflow-hidden border-y border-[rgba(255,255,255,0.06)] py-24"
+      className="relative flex min-h-[50vh] w-full items-center justify-center overflow-hidden border-y border-[rgba(10,9,20,0.06)] py-24"
     >
       {/* ReactBits Aurora Placeholder */}
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#6C63FF08] via-[#00F5D408] to-[#FF3CAC05] opacity-80 blur-[100px]" />
 
       {/* Aceternity Sparkles Placeholder */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-[size:24px_24px] opacity-20 [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]" />
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(80,70,229,0.15)_1px,transparent_1px)] bg-[size:24px_24px] opacity-15 [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]" />
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 md:px-12">
         <div className="relative flex flex-col items-center justify-between gap-16 md:flex-row md:gap-0">
@@ -76,7 +76,7 @@ export default function Stats() {
               {/* Separator line for desktop */}
               {idx < STATS.length - 1 && (
                 <div 
-                  className="absolute top-1/2 hidden h-24 w-[1px] -translate-y-1/2 bg-[rgba(255,255,255,0.08)] md:block" 
+                  className="absolute top-1/2 hidden h-24 w-[1px] -translate-y-1/2 bg-[rgba(10,9,20,0.08)] md:block" 
                   style={{ left: `${(idx + 1) * 25}%` }} 
                 />
               )}

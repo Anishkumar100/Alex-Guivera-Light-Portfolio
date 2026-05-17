@@ -28,18 +28,18 @@ const FAQS = [
 
 const FAQItem = ({ faq, isOpen, onClick }) => {
   return (
-    <div className="border-b border-[rgba(255,255,255,0.05)]">
+    <div className="border-b border-[rgba(10,9,20,0.05)]">
       <button
         onClick={onClick}
         className="group flex w-full items-center justify-between py-8 text-left transition-colors"
       >
-        <h3 className={`font-display text-[1.25rem] md:text-[1.5rem] font-bold tracking-tight transition-colors duration-300 group-hover:text-white ${isOpen ? 'text-accent-secondary' : 'text-text-primary'}`}>
+        <h3 className={`font-display text-[1.25rem] md:text-[1.5rem] font-bold tracking-tight transition-colors duration-300 group-hover:text-[var(--text-primary)] ${isOpen ? 'text-accent-secondary' : 'text-text-primary'}`}>
           {faq.question}
         </h3>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-colors duration-300 ${isOpen ? 'border-accent-secondary text-accent-secondary' : 'border-[rgba(255,255,255,0.1)] text-text-dim group-hover:border-[rgba(255,255,255,0.3)] group-hover:text-white'}`}
+          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-colors duration-300 ${isOpen ? 'border-accent-secondary text-accent-secondary' : 'border-[rgba(10,9,20,0.1)] text-text-dim group-hover:border-[rgba(10,9,20,0.2)] group-hover:text-[var(--text-primary)]'}`}
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M6 9l6 6 6-6" />
@@ -83,7 +83,7 @@ export default function FAQ() {
           <span className="mb-4 font-mono text-[11px] uppercase tracking-[0.25em] text-accent-secondary">
             Clear the Air
           </span>
-          <h2 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-extrabold tracking-tight text-white">
+          <h2 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-extrabold tracking-tight text-[var(--text-primary)]">
             FAQ
           </h2>
           <p className="mt-6 font-body text-[1.125rem] font-light text-text-secondary">
@@ -93,7 +93,7 @@ export default function FAQ() {
 
         {/* Right Side: Accordions */}
         <div className="flex w-full flex-col md:w-2/3">
-          <div className="flex flex-col border-t border-[rgba(255,255,255,0.05)]">
+          <div className="flex flex-col border-t border-[rgba(10,9,20,0.05)]">
             {FAQS.map((faq, idx) => (
               <FAQItem 
                 key={idx} 

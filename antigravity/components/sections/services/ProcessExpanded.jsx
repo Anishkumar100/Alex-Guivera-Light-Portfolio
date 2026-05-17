@@ -47,7 +47,7 @@ const AccordionItem = ({ step, isOpen, onClick }) => {
     <motion.div 
       layout
       onClick={onClick}
-      className={`group relative cursor-pointer border-b border-[rgba(255,255,255,0.05)] transition-colors duration-500 hover:bg-[rgba(255,255,255,0.01)] ${isOpen ? 'bg-[rgba(255,255,255,0.02)]' : ''}`}
+      className={`group relative cursor-pointer border-b border-[rgba(10,9,20,0.05)] transition-colors duration-500 hover:bg-[rgba(10,9,20,0.01)] ${isOpen ? 'bg-[rgba(10,9,20,0.02)]' : ''}`}
     >
       {/* Active Left Border Indicator */}
       <motion.div 
@@ -69,7 +69,7 @@ const AccordionItem = ({ step, isOpen, onClick }) => {
           >
             {step.id}
           </motion.span>
-          <h3 className="font-display text-[1.25rem] font-bold tracking-tight text-white md:text-[1.75rem]">
+          <h3 className="font-display text-[1.25rem] font-bold tracking-tight text-[var(--text-primary)] md:text-[1.75rem]">
             {step.title}
           </h3>
         </div>
@@ -78,7 +78,7 @@ const AccordionItem = ({ step, isOpen, onClick }) => {
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[rgba(255,255,255,0.1)] text-white"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[rgba(10,9,20,0.1)] text-[var(--text-primary)]"
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M6 9l6 6 6-6" />
@@ -137,7 +137,7 @@ export default function ProcessExpanded() {
         </div>
 
         {/* Accordion List */}
-        <motion.div layout className="flex flex-col border-t border-[rgba(255,255,255,0.05)]">
+        <motion.div layout className="flex flex-col border-t border-[rgba(10,9,20,0.05)]">
           {PROCESS_STEPS.map((step, idx) => (
             <AccordionItem 
               key={step.id} 

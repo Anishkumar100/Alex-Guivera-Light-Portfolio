@@ -52,15 +52,15 @@ export default function Comparison() {
           {/* Left Side: Standard Route */}
           <motion.div 
             style={{ clipPath: clipLeft }}
-            className="flex flex-col rounded-t-[var(--radius-2xl)] border border-[rgba(255,255,255,0.05)] bg-[rgba(255,255,255,0.01)] p-6 sm:p-10 md:rounded-l-[var(--radius-2xl)] md:rounded-tr-none md:border-r-0 md:p-16"
+            className="flex flex-col rounded-t-[var(--radius-2xl)] border border-[rgba(10,9,20,0.05)] bg-[rgba(10,9,20,0.01)] p-6 sm:p-10 md:rounded-l-[var(--radius-2xl)] md:rounded-tr-none md:border-r-0 md:p-16"
           >
-            <h3 className="mb-10 font-display text-[2rem] font-bold text-text-dim line-through decoration-[rgba(255,255,255,0.1)]">
+            <h3 className="mb-10 font-display text-[2rem] font-bold text-text-dim line-through decoration-[rgba(10,9,20,0.1)]">
               The Standard Route
             </h3>
             <ul className="flex flex-col gap-8">
               {DIY_POINTS.map((point, idx) => (
                 <li key={idx} className="flex items-start gap-5">
-                  <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[rgba(255,255,255,0.03)] text-[10px] text-text-dim border border-[rgba(255,255,255,0.05)]">
+                  <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[rgba(10,9,20,0.03)] text-[10px] text-text-dim border border-[rgba(10,9,20,0.05)]">
                     ✕
                   </span>
                   <span className="font-body text-[1.125rem] font-light leading-relaxed text-text-secondary opacity-70">
@@ -74,18 +74,18 @@ export default function Comparison() {
           {/* Right Side: My Way */}
           <motion.div 
             style={{ clipPath: clipRight }}
-            className="flex flex-col rounded-b-[var(--radius-2xl)] border border-white/20 bg-[rgba(255,255,255,0.03)] p-6 sm:p-10 shadow-[0_0_50px_rgba(255,255,255,0.05)] md:rounded-r-[var(--radius-2xl)] md:rounded-bl-none md:p-16"
+            className="flex flex-col rounded-b-[var(--radius-2xl)] border border-[rgba(10,9,20,0.12)] bg-[rgba(10,9,20,0.03)] p-6 sm:p-10 shadow-[0_0_50px_rgba(10,9,20,0.05)] md:rounded-r-[var(--radius-2xl)] md:rounded-bl-none md:p-16"
           >
-            <h3 className="mb-10 font-display text-[2rem] font-extrabold text-white">
+            <h3 className="mb-10 font-display text-[2rem] font-extrabold text-[var(--text-primary)]">
               The Antigravity Way
             </h3>
             <ul className="flex flex-col gap-8">
               {MY_WAY_POINTS.map((point, idx) => (
                 <li key={idx} className="flex items-start gap-5">
-                  <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10 text-[10px] text-white shadow-[0_0_15px_rgba(255,255,255,0.15)] border border-white/30">
+                  <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[rgba(80,70,229,0.06)] text-[10px] text-[var(--text-primary)] shadow-[0_0_15px_rgba(10,9,20,0.15)] border border-[rgba(10,9,20,0.15)]">
                     ✓
                   </span>
-                  <span className="font-body text-[1.125rem] font-medium leading-relaxed text-white">
+                  <span className="font-body text-[1.125rem] font-medium leading-relaxed text-[var(--text-primary)]">
                     {point}
                   </span>
                 </li>

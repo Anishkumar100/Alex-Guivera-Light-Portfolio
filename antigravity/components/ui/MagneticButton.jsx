@@ -38,8 +38,8 @@ export default function MagneticButton({ children, className = '', variant = 'pr
   const baseStyles = "relative inline-flex items-center justify-center transition-colors rounded-full px-6 py-2.5";
   
   const variants = {
-    primary: "bg-gradient-to-r from-accent-primary to-accent-secondary text-void font-bold shadow-[0_0_30px_rgba(108,99,255,0.3)] hover:shadow-glow-primary",
-    ghost: "bg-transparent border border-[rgba(108,99,255,0.3)] text-text-primary hover:text-white hover:border-accent-primary hover:shadow-glow-primary"
+    primary: "bg-gradient-to-r from-accent-primary to-accent-secondary text-white font-bold shadow-[var(--shadow-accent)] hover:shadow-[var(--shadow-lg)]",
+    ghost: "bg-transparent border border-[var(--border-glow)] text-[var(--text-primary)] hover:text-[var(--accent-primary)] hover:border-accent-primary hover:bg-[rgba(80,70,229,0.06)]"
   };
 
   return (

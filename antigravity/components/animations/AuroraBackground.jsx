@@ -59,7 +59,7 @@ export default function AuroraBackground({ className = "" }) {
             o += cc*(1.0+tailNoise*0.8)*tf;
           }
           o = tanh(pow(o/100.0, vec4(1.6)));
-          gl_FragColor = o * 1.5;
+          gl_FragColor = o * 0.8;
         }
       `,
       transparent: true
@@ -94,5 +94,5 @@ export default function AuroraBackground({ className = "" }) {
     };
   }, []);
 
-  return <div ref={containerRef} className={`pointer-events-none absolute inset-0 z-0 overflow-hidden ${className}`} />;
+  return <div ref={containerRef} className={`pointer-events-none absolute inset-0 z-0 overflow-hidden ${className}`} style={{ opacity: 0.4 }} />;
 }

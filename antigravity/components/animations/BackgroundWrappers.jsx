@@ -27,11 +27,11 @@ export function LightPillarSection({ children, className = "", ...rest }) {
   return (
     <div className={`relative w-full overflow-hidden ${className}`} {...rest}>
       <LightPillar
-        topColor="#FFFFFF"
-        bottomColor="#AAAACC"
-        intensity={0.6}
-        glowAmount={0.003}
-        pillarWidth={4.0}
+        topColor="#000000"
+        bottomColor="#000000"
+        intensity={1.8}
+        glowAmount={0.005}
+        pillarWidth={5.5}
         quality="medium"
       />
       <div className="relative z-10">{children}</div>

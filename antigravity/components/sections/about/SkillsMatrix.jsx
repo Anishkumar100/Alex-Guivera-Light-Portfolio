@@ -34,9 +34,9 @@ const ProgressBar = ({ name, level, index }) => {
   return (
     <div ref={ref} className="mb-6 flex flex-col">
       <div className="mb-3 flex items-center justify-between">
-        <span className="font-display text-[1rem] font-bold text-white">{name}</span>
+        <span className="font-display text-[1rem] font-bold text-[var(--text-primary)]">{name}</span>
       </div>
-      <div className="h-[3px] w-full overflow-hidden rounded-full bg-[rgba(255,255,255,0.05)]">
+      <div className="h-[3px] w-full overflow-hidden rounded-full bg-[rgba(10,9,20,0.05)]">
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: inView ? `${level}%` : 0 }}
@@ -69,7 +69,7 @@ export default function SkillsMatrix() {
     <section ref={containerRef} className="relative min-h-screen w-full overflow-hidden px-6 py-32 md:px-12">
       
       {/* Background Grid and Dot */}
-      <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(rgba(10,9,20,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(10,9,20,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px]">
         
@@ -106,7 +106,7 @@ export default function SkillsMatrix() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col rounded-[var(--radius-xl)] border border-[rgba(255,255,255,0.06)] bg-void-2 p-8 shadow-2xl backdrop-blur-md md:p-10"
+            className="flex flex-col rounded-[var(--radius-xl)] border border-[rgba(10,9,20,0.06)] bg-void-2 p-8 shadow-2xl backdrop-blur-md md:p-10"
           >
             <h3 className="mb-10 font-mono text-[13px] uppercase tracking-widest text-text-secondary">
               // Design Tools
@@ -124,7 +124,7 @@ export default function SkillsMatrix() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col rounded-[var(--radius-xl)] border border-[rgba(255,255,255,0.06)] bg-void-2 p-8 shadow-2xl backdrop-blur-md md:p-10"
+            className="flex flex-col rounded-[var(--radius-xl)] border border-[rgba(10,9,20,0.06)] bg-void-2 p-8 shadow-2xl backdrop-blur-md md:p-10"
           >
             <h3 className="mb-10 font-mono text-[13px] uppercase tracking-widest text-text-secondary">
               // Development
@@ -142,7 +142,7 @@ export default function SkillsMatrix() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col rounded-[var(--radius-xl)] border border-[rgba(255,255,255,0.06)] bg-void-2 p-8 shadow-2xl backdrop-blur-md md:p-10"
+            className="flex flex-col rounded-[var(--radius-xl)] border border-[rgba(10,9,20,0.06)] bg-void-2 p-8 shadow-2xl backdrop-blur-md md:p-10"
           >
             <h3 className="mb-10 font-mono text-[13px] uppercase tracking-widest text-text-secondary">
               // Disciplines
@@ -155,9 +155,9 @@ export default function SkillsMatrix() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.6 + (idx * 0.05), type: "spring" }}
-                  className="group cursor-default rounded-full border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] px-6 py-3 transition-all duration-300 hover:border-accent-primary hover:bg-accent-primary/20 hover:shadow-[0_0_15px_rgba(108,99,255,0.2)]"
+                  className="group cursor-default rounded-full border border-[rgba(10,9,20,0.06)] bg-[rgba(10,9,20,0.03)] px-6 py-3 transition-all duration-300 hover:border-accent-primary hover:bg-accent-primary/20 hover:shadow-[0_0_15px_rgba(108,99,255,0.2)]"
                 >
-                  <span className="font-display text-[1rem] font-bold tracking-wide text-text-secondary transition-colors duration-300 group-hover:text-white">
+                  <span className="font-display text-[1rem] font-bold tracking-wide text-text-secondary transition-colors duration-300 group-hover:text-[var(--text-primary)]">
                     {discipline}
                   </span>
                 </motion.div>

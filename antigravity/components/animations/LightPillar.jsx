@@ -4,17 +4,17 @@ import { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 
 const LightPillar = ({
-  topColor = '#FFFFFF',
-  bottomColor = '#AAAACC',
-  intensity = 0.8,
+  topColor = '#5046E5',
+  bottomColor = '#00C4AA',
+  intensity = 1.0,
   rotationSpeed = 0.3,
   interactive = false,
   className = '',
-  glowAmount = 0.004,
+  glowAmount = 0.003,
   pillarWidth = 3.0,
   pillarHeight = 0.4,
   noiseIntensity = 0.4,
-  mixBlendMode = 'screen',
+  mixBlendMode = 'normal',
   pillarRotation = 0,
   quality = 'medium'
 }) => {
@@ -54,9 +54,9 @@ const LightPillar = ({
     if (isMobile && quality !== 'low') effectiveQuality = 'low';
 
     const qualitySettings = {
-      low: { iterations: 24, waveIterations: 1, pixelRatio: 0.5, precision: 'mediump', stepMultiplier: 1.5 },
-      medium: { iterations: 40, waveIterations: 2, pixelRatio: 0.65, precision: 'mediump', stepMultiplier: 1.2 },
-      high: { iterations: 80, waveIterations: 4, pixelRatio: Math.min(window.devicePixelRatio, 2), precision: 'highp', stepMultiplier: 1.0 }
+      low: { iterations: 20, waveIterations: 1, pixelRatio: 0.5, precision: 'mediump', stepMultiplier: 1.5 },
+      medium: { iterations: 30, waveIterations: 2, pixelRatio: 0.5, precision: 'mediump', stepMultiplier: 1.2 },
+      high: { iterations: 60, waveIterations: 3, pixelRatio: Math.min(window.devicePixelRatio, 1), precision: 'highp', stepMultiplier: 1.0 }
     };
     const settings = qualitySettings[effectiveQuality] || qualitySettings.medium;
 
@@ -153,10 +153,16 @@ const LightPillar = ({
           t += d * STEP_MULT;
           if(t > 50.0) break;
         }
+        
         float widthNorm = uPillarWidth / 3.0;
         col = tanh(col * uGlowAmount / widthNorm);
         col -= fract(sin(dot(gl_FragCoord.xy, vec2(12.9898, 78.233))) * 43758.5453) / 15.0 * uNoiseIntensity;
-        gl_FragColor = vec4(col * uIntensity, 1.0);
+        
+        // Slightly boost alpha to ensure it's visible on the white background
+        float luma = dot(col * uIntensity, vec3(0.299, 0.587, 0.114));
+        float alpha = clamp(luma * 1.5, 0.0, 1.0);
+        
+        gl_FragColor = vec4(col * uIntensity, alpha);
       }
     `;
 
@@ -256,7 +262,11 @@ const LightPillar = ({
     <div
       ref={containerRef}
       className={`pointer-events-none absolute inset-0 z-0 h-full w-full overflow-hidden ${className}`}
-      style={{ mixBlendMode }}
+      style={{
+        mixBlendMode,
+        maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
+        WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)'
+      }}
     />
   );
 };
