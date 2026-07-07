@@ -319,65 +319,7 @@ export default function Footer() {
           On white theme: no invert, use multiply blend mode so the 
           dark logo naturally tints into the near-white footer.
       ══════════════════════════════════════════════════════════════ */}
-      <a
-        href="https://thefuturedevs.in"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="A template by TheFutureDevs"
-        className="group relative block w-full overflow-hidden"
-        style={{ marginTop: '8px' }}
-      >
-        {/* "A template by" label — centered above the logo */}
-        <p
-          className="text-center font-mono text-[9px] uppercase tracking-[0.3em] pb-3 transition-colors duration-500"
-          style={{ color: 'var(--text-dim)' }}
-        >
-          A template by
-        </p>
-
-        {/* The logo image */}
-        <div
-          className="relative w-full flex items-end justify-center transition-all duration-700 group-hover:opacity-100"
-          style={{
-            maskImage: 'linear-gradient(to bottom, transparent 0%, black 35%, black 80%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 35%, black 80%, transparent 100%)',
-            opacity: 0.35,
-          }}
-        >
-          {/* Base Logo */}
-          <img
-            src="/logo.png"
-            alt="TheFutureDevs"
-            width={900}
-            height={200}
-            className="w-full max-w-[900px] h-auto object-contain object-center transition-all duration-700 mix-blend-multiply"
-            style={{
-              paddingBottom: '2rem',
-            }}
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-              const fb = e.currentTarget.parentElement.querySelector('.fallback-text');
-              if (fb) fb.style.display = 'flex';
-            }}
-          />
-
-          {/* Wordmark fallback */}
-          <div
-            className="fallback-text w-full items-center justify-center pb-8"
-            style={{
-              display: 'none',
-              mixBlendMode: 'multiply',
-            }}
-          >
-            <span
-              className="font-display font-extrabold select-none"
-              style={{ fontSize: 'clamp(48px, 10vw, 140px)', letterSpacing: '-0.04em', lineHeight: 1, color: 'var(--text-dim)' }}
-            >
-              TheFutureDevs
-            </span>
-          </div>
-        </div>
-      </a>
+  
 
     </footer>
   );
